@@ -18,7 +18,8 @@ jobs:
       - name: no secrets committed
         run: |
           ! git ls-files | grep -E '(^|/)\.env$'
-          ! git grep -nE 'PRIVATE_KEY=0x[0-9a-fA-F]{64}|P256_PKCS8=' -- ':!*.md' ':!.github/**'
+          # Match real values only (PKCS8 PEM base64 always starts "LS0t"), not the template in wallets.mjs
+          ! git grep -nE 'PRIVATE_KEY=0x[0-9a-fA-F]{64}|P256_PKCS8=LS0t|AGENT_MNEMONIC="[a-z]+( [a-z]+){11}' -- ':!*.md' ':!.github/**'
   agents:
     runs-on: ubuntu-24.04
     steps:
