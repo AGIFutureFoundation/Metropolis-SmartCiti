@@ -1,5 +1,5 @@
 // Shared chain helpers: provider, contract artifacts, steward P-256 signing for StewardCouncil.execute.
-import { JsonRpcProvider, Wallet, NonceManager, Contract, ContractFactory, getBytes, hexlify, AbiCoder, keccak256, sha256 } from 'ethers';
+import { JsonRpcProvider, FetchRequest, Wallet, NonceManager, Contract, ContractFactory, getBytes, hexlify, AbiCoder, keccak256, sha256 } from 'ethers';
 import { createPrivateKey, sign as nodeSign } from 'node:crypto';
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -23,10 +23,24 @@ export function artifact(name) {
   return { abi: j.abi, bytecode: j.bytecode.object };
 }
 
+/**
+ * The JSON-RPC connection. RPC_URL overrides it (e.g. a local anvil fork of Monad testnet for rehearsals).
+ * Dwellir endpoints (*.dwellir.com) authenticate with the X-Api-Key header from DWELLIR_API_KEY, so the key never
+ * appears in a URL (ethers puts the request URL into its error messages and logs).
+ */
+export function rpcConnection(env) {
+  const url = process.env.RPC_URL || env.MONAD_TESTNET_RPC;
+  if (!url) throw new Error('No RPC: set MONAD_TESTNET_RPC in .env (or RPC_URL for a local fork)');
+  if (!/^https?:\/\/[^/]*\.dwellir\.com(\/|$)/.test(url)) return url;
+  if (!env.DWELLIR_API_KEY) throw new Error('MONAD_TESTNET_RPC is a Dwellir endpoint: set DWELLIR_API_KEY in .env');
+  const req = new FetchRequest(url);
+  req.setHeader('X-Api-Key', env.DWELLIR_API_KEY);
+  return req;
+}
+
 export function setup() {
   const env = loadEnv();
-  // RPC_URL overrides the RPC (e.g. a local anvil fork of Monad testnet for rehearsals).
-  const provider = new JsonRpcProvider(process.env.RPC_URL || env.MONAD_TESTNET_RPC, Number(env.CHAIN_ID), { staticNetwork: true });
+  const provider = new JsonRpcProvider(rpcConnection(env), Number(env.CHAIN_ID), { staticNetwork: true });
   // NonceManager: Monad and forks can lag on "pending" nonce reads; track nonces locally instead.
   const deployer = new NonceManager(new Wallet(env.DEPLOYER_PRIVATE_KEY, provider));
   deployer.address = env.DEPLOYER_ADDRESS;

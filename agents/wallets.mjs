@@ -53,7 +53,9 @@ function init() {
       `STEWARD${i + 1}_P256_X=${s.x}`,
       `STEWARD${i + 1}_P256_Y=${s.y}`,
     ]),
-    'MONAD_TESTNET_RPC=https://testnet-rpc.monad.xyz',
+    // Dwellir Monad testnet (full node). The key goes in DWELLIR_API_KEY and is sent as the X-Api-Key header.
+    'MONAD_TESTNET_RPC=https://api-monad-testnet-full.n.dwellir.com',
+    'DWELLIR_API_KEY=',
     'CHAIN_ID=10143',
   ];
   writeFileSync(ENV, lines.join('\n') + '\n', { mode: 0o600 });

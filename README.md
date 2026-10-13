@@ -27,6 +27,8 @@ An AI agent swarm trains people and robots in the trades. The swarm comes from t
 ```bash
 npm ci && (cd contracts && forge test)
 node agents/wallets.mjs init        # writes .env (git-ignored): deployer, agent mnemonic, steward P-256 keys
+                                    # then set DWELLIR_API_KEY in .env (RPC: Dwellir Monad testnet full node)
+node agents/rpc_check.mjs           # read-only: confirms the RPC serves chain 10143
 node agents/deploy.mjs              # needs testnet MON on the deployer (faucet.monad.xyz)
 node agents/swarm_loop.mjs --cycles 3
 ```
