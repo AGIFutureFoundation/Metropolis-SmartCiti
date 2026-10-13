@@ -1,0 +1,32 @@
+# CodeRabbit review settings for Metropolis SmartCiti (Omega Stewards)
+language: en-US
+reviews:
+  profile: assertive
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches: ["main"]
+  path_filters:
+    - "!contracts/lib/**"
+    - "!node_modules/**"
+    - "!loop/ledger*.jsonl"
+    - "!media/**"
+  path_instructions:
+    - path: "contracts/src/**/*.sol"
+      instructions: >-
+        Security-first review. Check access control (only StewardCouncil may govern), signature replay
+        (council nonce, EIP-3009 nonces), P-256 malleability (low-s), reentrancy around token transfers,
+        integer bounds on caps, and that agents can never approve their own actions.
+    - path: "agents/**/*.mjs"
+      instructions: >-
+        Never log or persist private keys, mnemonics or PKCS8 material. Check that the x402 wire format
+        (402 body, X-PAYMENT, X-PAYMENT-RESPONSE) matches x402 v1 "exact" and that spending caps are honored.
+    - path: "web/**"
+      instructions: "No secrets in the browser. Read-only RPC calls only unless the user signs in their own wallet."
+chat:
+  auto_reply: true

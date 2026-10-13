@@ -1,0 +1,61 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Tactile ($SENSE)",
+  "description": "Robotic sensing agent: enhanced sensing, feedback and environmental awareness. Grades robot runs (QA).",
+  "image": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/web/omega.svg",
+  "services": [
+    {
+      "name": "x402",
+      "endpoint": "/x402/virtuals.tactile-sense/work",
+      "version": "1",
+      "price": "1.5 tOMEGA",
+      "network": "monad-testnet"
+    },
+    {
+      "name": "virtuals-acp",
+      "endpoint": "https://app.virtuals.io/virtuals/86726"
+    }
+  ],
+  "registrations": [],
+  "supportedTrust": [
+    "reputation"
+  ],
+  "x402Support": true,
+  "active": true,
+  "omega": {
+    "slug": "virtuals.tactile-sense",
+    "role": "sensor-qa",
+    "metaprompt": "Sensor/QA: grade the run against its checks; flag any keep-out or load-limit breach.",
+    "wallet": "0x56dF95617AE1F24144F26FE5a7Df68F73870157c",
+    "caps": {
+      "perPayment": "5 tOMEGA",
+      "daily": "50 tOMEGA",
+      "above": "needs 2-of-3 steward passkeys"
+    },
+    "mayNever": [
+      "governance.final_vote",
+      "charter.amend",
+      "treasury.transfer",
+      "proposal.enact",
+      "windfall.distribute",
+      "steward.appoint",
+      "set_price",
+      "accept_equity",
+      "accept_crypto",
+      "issue_invoice",
+      "move_funds"
+    ],
+    "token": {
+      "onchain_here": "tOMEGA (Monad testnet stand-in, no market value)",
+      "canonical": "founder $OMEGA (Virtuals). Mint address to be confirmed by the founder; see README."
+    },
+    "source": "api.virtuals.io/api/virtuals/86726",
+    "virtuals": {
+      "id": 86726,
+      "chain": "BASE",
+      "wallet": "0x8Bda2a3Fc36E98E601a4EB43457A23835725B102",
+      "preToken": "0xA79940260B7911DCA22E3730114e5BcA845ef397",
+      "url": "https://app.virtuals.io/virtuals/86726"
+    }
+  }
+}

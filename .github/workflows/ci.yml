@@ -1,0 +1,31 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+      - uses: foundry-rs/foundry-toolchain@v1
+      - name: forge test
+        working-directory: contracts
+        run: forge test -vv
+      - name: no secrets committed
+        run: |
+          ! git ls-files | grep -E '(^|/)\.env$'
+          ! git grep -nE 'PRIVATE_KEY=0x[0-9a-fA-F]{64}|P256_PKCS8=' -- ':!*.md' ':!.github/**'
+  agents:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - run: npm ci
+      - name: syntax check
+        run: for f in agents/*.mjs; do node --check "$f"; done

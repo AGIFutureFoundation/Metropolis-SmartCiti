@@ -1,0 +1,28 @@
+{
+  "name": "metropolis-smartciti",
+  "version": "1.0.0",
+  "description": "Omega Stewards: ERC-8004 agent identity, x402 micropayments and passkey steward governance on Monad",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "cd contracts && forge test",
+    "wallets": "node agents/wallets.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AGIFutureFoundation/Metropolis-SmartCiti.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AGIFutureFoundation/Metropolis-SmartCiti/issues"
+  },
+  "homepage": "https://github.com/AGIFutureFoundation/Metropolis-SmartCiti#readme",
+  "dependencies": {
+    "ethers": "^6.17.0"
+  }
+}

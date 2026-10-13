@@ -1,0 +1,50 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Proposal & Grant Drafter",
+  "description": "Drafts proposals and grants for human review; never enacts them",
+  "image": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/web/omega.svg",
+  "services": [
+    {
+      "name": "x402",
+      "endpoint": "/x402/robotics-dao.proposal-grant-drafter/work",
+      "version": "1",
+      "price": "2 tOMEGA",
+      "network": "monad-testnet"
+    }
+  ],
+  "registrations": [],
+  "supportedTrust": [
+    "reputation"
+  ],
+  "x402Support": true,
+  "active": true,
+  "omega": {
+    "slug": "robotics-dao.proposal-grant-drafter",
+    "role": "tutor",
+    "metaprompt": "Tutor: return a flipped-lesson plan with objectives, safety gates and a graded check.",
+    "wallet": "0x1592cC3985E9E90df3A41014178F86C78A16a695",
+    "caps": {
+      "perPayment": "5 tOMEGA",
+      "daily": "50 tOMEGA",
+      "above": "needs 2-of-3 steward passkeys"
+    },
+    "mayNever": [
+      "governance.final_vote",
+      "charter.amend",
+      "treasury.transfer",
+      "proposal.enact",
+      "windfall.distribute",
+      "steward.appoint",
+      "set_price",
+      "accept_equity",
+      "accept_crypto",
+      "issue_invoice",
+      "move_funds"
+    ],
+    "token": {
+      "onchain_here": "tOMEGA (Monad testnet stand-in, no market value)",
+      "canonical": "founder $OMEGA (Virtuals). Mint address to be confirmed by the founder; see README."
+    },
+    "source": "agi-corp-worlds/agents/swarms/robotics-dao.json"
+  }
+}

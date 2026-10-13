@@ -1,0 +1,50 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "PLC & Controls Technicians Robot",
+  "description": "Simulated robot for the 'PLC & Controls Technicians' module; replays signed simulator runs (no physical dispatch)",
+  "image": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/web/omega.svg",
+  "services": [
+    {
+      "name": "x402",
+      "endpoint": "/x402/robot.hall-plc-techs/work",
+      "version": "1",
+      "price": "1 tOMEGA",
+      "network": "monad-testnet"
+    }
+  ],
+  "registrations": [],
+  "supportedTrust": [
+    "reputation"
+  ],
+  "x402Support": true,
+  "active": true,
+  "omega": {
+    "slug": "robot.hall-plc-techs",
+    "role": "robot",
+    "metaprompt": "Robot: replay the signed simulator run; physical dispatch is disabled.",
+    "wallet": "0xf6C3111B1EfF88b0F9A7Aa0960Cbd127CCf66c4a",
+    "caps": {
+      "perPayment": "5 tOMEGA",
+      "daily": "50 tOMEGA",
+      "above": "needs 2-of-3 steward passkeys"
+    },
+    "mayNever": [
+      "governance.final_vote",
+      "charter.amend",
+      "treasury.transfer",
+      "proposal.enact",
+      "windfall.distribute",
+      "steward.appoint",
+      "set_price",
+      "accept_equity",
+      "accept_crypto",
+      "issue_invoice",
+      "move_funds"
+    ],
+    "token": {
+      "onchain_here": "tOMEGA (Monad testnet stand-in, no market value)",
+      "canonical": "founder $OMEGA (Virtuals). Mint address to be confirmed by the founder; see README."
+    },
+    "source": "agi-corp-worlds/agents/robotics/index.json"
+  }
+}

@@ -1,0 +1,420 @@
+{
+  "note": "Public addresses only. Private keys stay in the local .env; agent keys are HD-derived (m/44'/60'/0'/0/i).",
+  "chainId": 10143,
+  "deployer": "0x3A879960BCF77f964b41e30f6307219281999A3F",
+  "stewards": [
+    {
+      "id": 1,
+      "p256": {
+        "x": "0x1c6a827fc315cef7b1f1fbc20f0ffd8e8902f0058e8901f6cc2c377348321d35",
+        "y": "0xbaa3d5af4459c9007680bc5a8c1caed219f4e1b17334ac97bb74907703e212a2"
+      }
+    },
+    {
+      "id": 2,
+      "p256": {
+        "x": "0x104f80eb05a9c5126c6aaff9cd848d197bda171c30e11dd43f5a450d43ba2521",
+        "y": "0x2e9f1e86d9f87d86ead89120adf90ca1d994f02f81db86b9020adba2198e3a36"
+      }
+    },
+    {
+      "id": 3,
+      "p256": {
+        "x": "0x1465ae3965a2c25a1e1d3693b3e873a73614e44fd987febb03cab5210bd25bf4",
+        "y": "0x36fb595acaa770bb6c399a6403de188e500f65a46218ae1f43f1dc48b0569c09"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "index": 0,
+      "slug": "robotics-dao.coordinator",
+      "address": "0xE8bA0C0572D98d5Ebd850736d8eA6554919FF23b"
+    },
+    {
+      "index": 1,
+      "slug": "robotics-dao.evidence-monitor",
+      "address": "0x6a5F4Da7c75CD43e0e7059E13458218377b51b27"
+    },
+    {
+      "index": 2,
+      "slug": "robotics-dao.research-synthesis-agent",
+      "address": "0xAd66B14EcDA33ECdFdFE18C9d4FcCf0be9b60fD6"
+    },
+    {
+      "index": 3,
+      "slug": "robotics-dao.collaborator-scout",
+      "address": "0x80d61968a61062EDe0CDC975089fF736e8703E5e"
+    },
+    {
+      "index": 4,
+      "slug": "robotics-dao.task-router",
+      "address": "0xF8D5d61e70e6da71061027D34595c7230746B7AB"
+    },
+    {
+      "index": 5,
+      "slug": "robotics-dao.proposal-grant-drafter",
+      "address": "0x1592cC3985E9E90df3A41014178F86C78A16a695"
+    },
+    {
+      "index": 6,
+      "slug": "robotics-dao.progress-tracker",
+      "address": "0x0cf5Fc2C4658C9C4A494761d2F1f6B5db05559a3"
+    },
+    {
+      "index": 7,
+      "slug": "agentic-payments.coordinator",
+      "address": "0xe8ddd2B0b7705D499d1cCff2aB598833e6F1Ba98"
+    },
+    {
+      "index": 8,
+      "slug": "agentic-payments.buyer-agent",
+      "address": "0x158044aA20e0f68844499C1af585CEf582E94923"
+    },
+    {
+      "index": 9,
+      "slug": "agentic-payments.seller-agent",
+      "address": "0x750b8f2a24079fCb72E46F7767C0DB91a89E76bD"
+    },
+    {
+      "index": 10,
+      "slug": "agentic-payments.provisioning-agent",
+      "address": "0x89766F532e5CCa1449489b5e835719fDf87Cd03b"
+    },
+    {
+      "index": 11,
+      "slug": "agentic-payments.budget-agent",
+      "address": "0xB739BABC9be918608C212E38328a139895B4aDC7"
+    },
+    {
+      "index": 12,
+      "slug": "agentic-payments.rail-agent",
+      "address": "0x21f9D68139a2c17a968067580c1c86858Fb388ca"
+    },
+    {
+      "index": 13,
+      "slug": "robot.crane-lift",
+      "address": "0x7216b7d60E042780B7Ba714e161a6A70DF86AF1B"
+    },
+    {
+      "index": 14,
+      "slug": "robot.excavator-trench",
+      "address": "0xfCF5552b6B085430a38E84f92295E106D17e3A98"
+    },
+    {
+      "index": 15,
+      "slug": "robot.forklift-run",
+      "address": "0x6A57254Dd6C4123e2B83647D8E93b1BA0d5e108e"
+    },
+    {
+      "index": 16,
+      "slug": "robot.weld-bead",
+      "address": "0x0aB0A4BE0432C5d7218C246daB0F251bd2FBe977"
+    },
+    {
+      "index": 17,
+      "slug": "robot.scaffold-bay",
+      "address": "0xd4F56045609A3d85E228Ef4231c945A33ebcC985"
+    },
+    {
+      "index": 18,
+      "slug": "robot.rigging-signals",
+      "address": "0x4059d01F7d66265Ba4C9614B2256DC335b4F72E8"
+    },
+    {
+      "index": 19,
+      "slug": "robot.load-chart",
+      "address": "0x2d6b93202781f77aFc058F8A94609cE85F46e222"
+    },
+    {
+      "index": 20,
+      "slug": "robot.pressure-washer",
+      "address": "0x8E7FB9b8E774553aFdc975C0b357DEAcA1eBD878"
+    },
+    {
+      "index": 21,
+      "slug": "robot.airless-sprayer",
+      "address": "0xa441dfC7535f0c81557b9a6a3a58B257A568CA7c"
+    },
+    {
+      "index": 22,
+      "slug": "robot.boom-lift",
+      "address": "0x67800955465e536ba1797A1Ef5341D0c0d647D75"
+    },
+    {
+      "index": 23,
+      "slug": "robot.overhead-crane",
+      "address": "0xD877F1E1E6D2Aa6Dd979Eee4c31e7af1EAb3D80A"
+    },
+    {
+      "index": 24,
+      "slug": "robot.hall-robotics",
+      "address": "0xF20728837F908B9E477A86dd6471E5CeCF36b979"
+    },
+    {
+      "index": 25,
+      "slug": "robot.hall-plc-techs",
+      "address": "0xf6C3111B1EfF88b0F9A7Aa0960Cbd127CCf66c4a"
+    },
+    {
+      "index": 26,
+      "slug": "robot.hall-survey-drone",
+      "address": "0x71B6d583e15B3A1c954c0051F9A0a051bF3487d3"
+    },
+    {
+      "index": 27,
+      "slug": "robot.hall-port-crane",
+      "address": "0xc33209Cd1eDfbA9B841D4481661A8e8822133e79"
+    },
+    {
+      "index": 28,
+      "slug": "robot.hall-machinists",
+      "address": "0xC3c8d608ac904745e8a1aF0F73387208C3aB19cE"
+    },
+    {
+      "index": 29,
+      "slug": "robot.hall-elevator",
+      "address": "0x9372d56164C4C06b6B2234153db87112c5732c0C"
+    },
+    {
+      "index": 30,
+      "slug": "robot.hall-concrete-pump",
+      "address": "0x5A42881B64fc5b11ED40bAD2B1d076ED03Bfa215"
+    },
+    {
+      "index": 31,
+      "slug": "virtuals.tactile-sense",
+      "address": "0x56dF95617AE1F24144F26FE5a7Df68F73870157c"
+    },
+    {
+      "index": 32,
+      "slug": "virtuals.acp-01a1225a",
+      "address": "0xEB15d113a4B2bC0c2e9E19AfA68903e51469E7D6"
+    },
+    {
+      "index": 33,
+      "slug": "virtuals.acp-019ebb52",
+      "address": "0x6fe7Ed04633F7Da2E03901cE654AD62AaA4Daf8F"
+    },
+    {
+      "index": 34,
+      "slug": "omega.agi-corp-hub",
+      "address": "0xad674D44403eB8cCC462F04AAB4533a65dEd724C"
+    },
+    {
+      "index": 35,
+      "slug": "omega.cognition-x",
+      "address": "0x7DE34C55fCfEA3e9Eece33692f9cD8961091DbCF"
+    },
+    {
+      "index": 36,
+      "slug": "omega.empathic-x",
+      "address": "0x752D08C35168e621ae113e55AcF6e0Eedb95745B"
+    },
+    {
+      "index": 37,
+      "slug": "omega.diagnostic-x",
+      "address": "0x82fdD9657837CbA90DB4CbB8D35CC72C60174176"
+    },
+    {
+      "index": 38,
+      "slug": "omega.s04-curable-x",
+      "address": "0x8bAfcdF97FaF0d7206fE724CadB95685CA024d76"
+    },
+    {
+      "index": 39,
+      "slug": "omega.s05-biopharma-go",
+      "address": "0x7895284E689de23b6f5954FD2f5F0A9097e3885A"
+    },
+    {
+      "index": 40,
+      "slug": "omega.s06-blockchain",
+      "address": "0x469f7D49100229eFeB7514EB449f5D1B2863eBC0"
+    },
+    {
+      "index": 41,
+      "slug": "omega.s07-divine-dao",
+      "address": "0x402DD1a1d8cC7a338C970e21D58b0905Fc0DF1B8"
+    },
+    {
+      "index": 42,
+      "slug": "omega.locator-x",
+      "address": "0xA7f271276D18BdbDAcfc156485bdA4B8d9ccE976"
+    },
+    {
+      "index": 43,
+      "slug": "omega.s09-astrological-x",
+      "address": "0xD11bB9311267A679644642f098F89fBC5A466952"
+    },
+    {
+      "index": 44,
+      "slug": "omega.smartciti-holodeck",
+      "address": "0x446639C557a0aB52C86F26D5e250029f60f43232"
+    },
+    {
+      "index": 45,
+      "slug": "omega.s11-molecular",
+      "address": "0xcaAD88b1AE61B4A8eFCdB3346Ba020F29d3B7b4F"
+    },
+    {
+      "index": 46,
+      "slug": "omega.s12-parking-smart-x",
+      "address": "0x13b92729710b9D8c8FB50c42ecFb9b69053fA65a"
+    },
+    {
+      "index": 47,
+      "slug": "omega.s13-gonstead-x",
+      "address": "0x30b3380E507C80660cD816428A4C399F04b6761A"
+    },
+    {
+      "index": 48,
+      "slug": "omega.s14-askdoc-x",
+      "address": "0x48AD3e3090F0364E74127E15150d2f36dF85Cc79"
+    },
+    {
+      "index": 49,
+      "slug": "omega.s15-romanbridge-dao",
+      "address": "0xe7a7fFe514f42A3498972860a781B6eB22DE5962"
+    },
+    {
+      "index": 50,
+      "slug": "omega.s16-echodawn-dao",
+      "address": "0xf3d3D8156A3cD2B8499EF46CcE222D2c80c4E970"
+    },
+    {
+      "index": 51,
+      "slug": "omega.s17-curable-blockchain-dao",
+      "address": "0x98be1D1581cBD9e6eFB6a0A31D2268041DCe3c6c"
+    },
+    {
+      "index": 52,
+      "slug": "omega.biota-blockchain",
+      "address": "0x8B3EF309E0f9311FFFd5468d58ED89BAC03Fb12B"
+    },
+    {
+      "index": 53,
+      "slug": "omega.s19-moscone-x",
+      "address": "0x659679ACFaf558552809E31996276AE8B3675105"
+    },
+    {
+      "index": 54,
+      "slug": "omega.s20-cmmc",
+      "address": "0x172E194824fDc2Ba7352362Fa4df773AA0A91263"
+    },
+    {
+      "index": 55,
+      "slug": "omega.s21-incubator-dao",
+      "address": "0x4109c4a5ff95cEcD7257Cb8a8094e9F6F7a117a9"
+    },
+    {
+      "index": 56,
+      "slug": "omega.s22-get-delivery-dao",
+      "address": "0x94a8bEc03BF53E2bCA6e27997A7C14e25Ead5b40"
+    },
+    {
+      "index": 57,
+      "slug": "omega.s23-avatar-chat",
+      "address": "0x1cb39a288A5153021f86Eef37ca459EeA75Fe77f"
+    },
+    {
+      "index": 58,
+      "slug": "omega.s24-donatello-dao",
+      "address": "0x88Ea1FbEa2b063f1702b47c25934211881C3a1D2"
+    },
+    {
+      "index": 59,
+      "slug": "omega.s25-mypet-ai",
+      "address": "0x3eb139ebba885aAB23D8b2e932d4285c85dE5869"
+    },
+    {
+      "index": 60,
+      "slug": "omega.s26-lyka-dao",
+      "address": "0x31331F1DF2D84853384412e5513f0a5287e86dc4"
+    },
+    {
+      "index": 61,
+      "slug": "omega.s27-genomic-dao",
+      "address": "0x35D022b6fa183f255EFdb63c5D6Ee1d229Cd4867"
+    },
+    {
+      "index": 62,
+      "slug": "omega.s28-genomic-blockchain",
+      "address": "0x6728C1CCa54D582b8E20717Ab4DA8d62f6477240"
+    },
+    {
+      "index": 63,
+      "slug": "omega.s29-metaverse-dao",
+      "address": "0x833Ffd68B640708Ab26911e37C25BFDFdcdF01d7"
+    },
+    {
+      "index": 64,
+      "slug": "omega.robotics-dao",
+      "address": "0xe8f2e1CCf15C77b7d7FdF48244a65424326F43c2"
+    },
+    {
+      "index": 65,
+      "slug": "omega.s31-aerospace-dao",
+      "address": "0x7eD4Cc8b7e12B915bB7e6b9d63E33877d60b9980"
+    },
+    {
+      "index": 66,
+      "slug": "omega.s32-solar-dao",
+      "address": "0xFE2082CE1374F219942Cf78DBD8cd57172751495"
+    },
+    {
+      "index": 67,
+      "slug": "omega.s33-infogurus",
+      "address": "0x058Cd0107a1AE8EA34ed98F4291e3F2F07C8C5e3"
+    },
+    {
+      "index": 68,
+      "slug": "omega.s34-als-dao",
+      "address": "0x9740324216AE8204ac0363DD7908128b59d90e20"
+    },
+    {
+      "index": 69,
+      "slug": "omega.s35-parkinsons-dao",
+      "address": "0x681eA843bf60E0D9F1A81675FdBdB3099d7170a9"
+    },
+    {
+      "index": 70,
+      "slug": "omega.cancer-dao",
+      "address": "0x10eD1Fad16D9F0429D06d6060e79C3aE30C0978f"
+    },
+    {
+      "index": 71,
+      "slug": "omega.ecology-dao",
+      "address": "0x2F1cb69111F35Ed69EE072c54CbD29F84Da49986"
+    },
+    {
+      "index": 72,
+      "slug": "omega.climate-dao",
+      "address": "0xD9135a84336C84D7Ec25C913e9215C592ee2215F"
+    },
+    {
+      "index": 73,
+      "slug": "omega.education-dao",
+      "address": "0x47797a0Be327Cfa47Cf5d1000b69c4356e868e5a"
+    },
+    {
+      "index": 74,
+      "slug": "omega.public-health-dao",
+      "address": "0xEfC4b6c79D060479D47D15E56bEd538d6262a7eF"
+    },
+    {
+      "index": 75,
+      "slug": "omega.agentic-payments",
+      "address": "0x76fB735216D6a9dA23923c3bcBa0cFfd48fE1A25"
+    },
+    {
+      "index": 76,
+      "slug": "omega.agents-deploy-infrastructure",
+      "address": "0x509433fBe842F21e004f34F113235a270F2466f7"
+    },
+    {
+      "index": 77,
+      "slug": "omega.autonomous-organizations",
+      "address": "0xCf7375079eFE0abD8d5111c252F02Ea52B16E8b8"
+    }
+  ]
+}

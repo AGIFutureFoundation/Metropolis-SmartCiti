@@ -1,0 +1,58 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Virtuals ACP agent 01a1225a",
+  "description": "Founder ACP agent; offerings and wallet resolved after `acp configure` (login required).",
+  "image": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/web/omega.svg",
+  "services": [
+    {
+      "name": "x402",
+      "endpoint": "/x402/virtuals.acp-01a1225a/work",
+      "version": "1",
+      "price": "0.5 tOMEGA",
+      "network": "monad-testnet"
+    },
+    {
+      "name": "virtuals-acp",
+      "endpoint": "https://app.virtuals.io/acp/agents/01a1225a-1f57-7bd0-b0b5-c9f0737461b2"
+    }
+  ],
+  "registrations": [],
+  "supportedTrust": [
+    "reputation"
+  ],
+  "x402Support": true,
+  "active": true,
+  "omega": {
+    "slug": "virtuals.acp-01a1225a",
+    "role": "coordinator",
+    "metaprompt": "Coordinator: decompose the module into tasks, buy only what the cycle needs, never exceed the cap.",
+    "wallet": "0xEB15d113a4B2bC0c2e9E19AfA68903e51469E7D6",
+    "caps": {
+      "perPayment": "5 tOMEGA",
+      "daily": "50 tOMEGA",
+      "above": "needs 2-of-3 steward passkeys"
+    },
+    "mayNever": [
+      "governance.final_vote",
+      "charter.amend",
+      "treasury.transfer",
+      "proposal.enact",
+      "windfall.distribute",
+      "steward.appoint",
+      "set_price",
+      "accept_equity",
+      "accept_crypto",
+      "issue_invoice",
+      "move_funds"
+    ],
+    "token": {
+      "onchain_here": "tOMEGA (Monad testnet stand-in, no market value)",
+      "canonical": "founder $OMEGA (Virtuals). Mint address to be confirmed by the founder; see README."
+    },
+    "source": "https://app.virtuals.io/acp/agents/01a1225a-1f57-7bd0-b0b5-c9f0737461b2",
+    "virtuals": {
+      "acpAgentId": "01a1225a-1f57-7bd0-b0b5-c9f0737461b2",
+      "url": "https://app.virtuals.io/acp/agents/01a1225a-1f57-7bd0-b0b5-c9f0737461b2"
+    }
+  }
+}

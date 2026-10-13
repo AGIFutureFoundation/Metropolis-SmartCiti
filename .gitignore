@@ -1,0 +1,17 @@
+# Secrets: never commit keys
+.env
+.env.*
+!.env.example
+*.key
+wallets/private/
+
+# Build output
+contracts/out/
+contracts/cache/
+contracts/broadcast/*/31337/
+node_modules/
+.DS_Store
+*.log
+media/tmp/
+deployments/rehearsal-fork.json
+loop/*.rehearsal.*
