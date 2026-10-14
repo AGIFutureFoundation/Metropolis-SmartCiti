@@ -23,6 +23,11 @@
     "role": "omega-liaison",
     "metaprompt": "Omega liaison: brief the human stewards; never vote, enact, move treasury or appoint.",
     "wallet": "0x402DD1a1d8cC7a338C970e21D58b0905Fc0DF1B8",
+    "wallets": {
+      "monad": "0x402DD1a1d8cC7a338C970e21D58b0905Fc0DF1B8",
+      "asi": "11112HeFXRix5ZjJ9P86CqanRE73f192bzqA5STJVX1xuGcJhhDLcj",
+      "solana": "2zXaazbg3tBwiakMeQSWioC9ahvXum4ukrpEZrXJaZKH"
+    },
     "caps": {
       "perPayment": "5 tOMEGA",
       "daily": "50 tOMEGA",

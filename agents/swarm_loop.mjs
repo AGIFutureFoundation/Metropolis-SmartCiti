@@ -31,6 +31,17 @@ const live = roster
   .filter((a) => d.agents[a.slug])
   .map((a) => ({ ...a, ...d.agents[a.slug], wallet: agentWallet(env, d.agents[a.slug].index).connect(provider) }));
 
+// Monad reserves gas LIMIT x maxFee up front (~0.06 MON per ERC-8004 feedback tx at testnet fees),
+// so make sure every live agent can afford a few feedback txs before the loop starts.
+const SWARM_GAS = BigInt(Math.round(Number(process.env.SWARM_GAS_MON || '0.2') * 1e6)) * 10n ** 12n;
+for (const a of live) {
+  const have = await provider.getBalance(a.wallet.address);
+  if (have < SWARM_GAS) {
+    await (await deployer.sendTransaction({ to: a.wallet.address, value: SWARM_GAS - have })).wait();
+    console.log(`  gas top-up ${a.slug} -> ${Number(SWARM_GAS) / 1e18} MON`);
+  }
+}
+
 mkdirSync(join(ROOT, 'loop'), { recursive: true });
 const LEDGER = join(ROOT, process.env.RPC_URL ? 'loop/ledger.rehearsal.jsonl' : 'loop/ledger.jsonl');
 const log = (e) => appendFileSync(LEDGER, JSON.stringify({ t: new Date().toISOString(), ...e }) + '\n');

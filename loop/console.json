@@ -1,0 +1,30 @@
+{
+  "updated": "2026-10-14T01:05:26.974Z",
+  "cycles": 3,
+  "receipts": 11,
+  "receiptHead": "0x758cf1125c5c63998d1d312db8a81eb64774f2ede32874fe4dbaa8aa0da05ebe",
+  "councilNonce": 6,
+  "credentials": 4,
+  "agents": 12,
+  "deployerMON": "2098940530000000000",
+  "summary": [
+    {
+      "cycle": 1,
+      "module": "TCA-110 m1 Tower Crane Lift",
+      "payments": 3,
+      "head": "0x1d95baacb00afc900048bfa3ebef54a693df9284143b62aacdb1e11ce8216c5d"
+    },
+    {
+      "cycle": 2,
+      "module": "TCA-120 m4 Rigging Signal Call",
+      "payments": 2,
+      "head": "0x6364a435c3e713721f34648e047e69ce18be4c4b05c0504b0519e1f8d32b6588"
+    },
+    {
+      "cycle": 3,
+      "module": "TCA-130 m1 Weld Bead Run",
+      "payments": 2,
+      "head": "0x758cf1125c5c63998d1d312db8a81eb64774f2ede32874fe4dbaa8aa0da05ebe"
+    }
+  ]
+}

@@ -23,6 +23,11 @@
     "role": "robot",
     "metaprompt": "Robot: replay the signed simulator run; physical dispatch is disabled.",
     "wallet": "0x7216b7d60E042780B7Ba714e161a6A70DF86AF1B",
+    "wallets": {
+      "monad": "0x7216b7d60E042780B7Ba714e161a6A70DF86AF1B",
+      "asi": "11112Mzi81UMvg7vc82UM928oWpTYqTw94Uzz9mmW4RfxyL476oFpA",
+      "solana": "DP9WR4H1fEqiuZzHrDowGqCSeyG46b5aE5jGiUQfzbcH"
+    },
     "caps": {
       "perPayment": "5 tOMEGA",
       "daily": "50 tOMEGA",

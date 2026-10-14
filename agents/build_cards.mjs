@@ -31,6 +31,8 @@ for (const [i, a] of roster.agents.entries()) {
       role: ROLE_NAME[a.role],
       metaprompt: METAPROMPT[a.role],
       wallet,
+      // Multi-chain wallets (public addresses only), all derived from the swarm mnemonic; see agents/wallets.mjs.
+      wallets: pub.agents[i].chains || { monad: wallet },
       caps: { perPayment: '5 tOMEGA', daily: '50 tOMEGA', above: 'needs 2-of-3 steward passkeys' },
       mayNever: roster.may_never,
       token: roster.omega_token,

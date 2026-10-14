@@ -1,7 +1,36 @@
 {
-  "note": "Public addresses only. Private keys stay in the local .env; agent keys are HD-derived (m/44'/60'/0'/0/i).",
+  "note": "Public addresses only. Private keys stay in the local .env; agent keys are HD-derived from AGENT_MNEMONIC: monad m/44'/60'/0'/0/i, asi = same secp256k1 key as monad, solana m/44'/501'/i'/0'. `address` is the Monad address (kept for backward compatibility).",
   "chainId": 10143,
+  "networks": {
+    "monad": {
+      "kind": "evm",
+      "network": "monad-testnet",
+      "chainId": 10143,
+      "explorer": "https://testnet.monadexplorer.com"
+    },
+    "asi": {
+      "kind": "rchain",
+      "network": "asi-devnet (devnet1, shard root)",
+      "decimals": 8,
+      "wallet": "https://wallet.dev.asichain.io",
+      "explorer": "https://explorer.dev.asichain.io",
+      "faucet": "https://faucet.dev.asichain.io"
+    },
+    "solana": {
+      "kind": "solana",
+      "network": "solana-devnet",
+      "genesisHash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "decimals": 9,
+      "explorer": "https://explorer.solana.com/?cluster=devnet",
+      "faucet": "https://faucet.solana.com"
+    }
+  },
   "deployer": "0x3A879960BCF77f964b41e30f6307219281999A3F",
+  "deployerChains": {
+    "monad": "0x3A879960BCF77f964b41e30f6307219281999A3F",
+    "asi": "111115d9iNnSPdPm2mP2vTeqjQazWANgsoUm1YsXu1q7z43vTE78e",
+    "solana": "EvVQmHGUky1T5roKyt3upVR1rs3zEdUA92JwseSa4Szd"
+  },
   "stewards": [
     {
       "id": 1,
@@ -29,392 +58,782 @@
     {
       "index": 0,
       "slug": "robotics-dao.coordinator",
-      "address": "0xE8bA0C0572D98d5Ebd850736d8eA6554919FF23b"
+      "address": "0xE8bA0C0572D98d5Ebd850736d8eA6554919FF23b",
+      "chains": {
+        "monad": "0xE8bA0C0572D98d5Ebd850736d8eA6554919FF23b",
+        "asi": "11112vATxLPaKWa79Wgt1sbNnzepfrdLQQSR9BQeVhMPmmWiYiPBm3",
+        "solana": "DyRc1L3zsBGxcwRMcNXLvvuALtAtyo4WbCvEeHsGsaVs"
+      }
     },
     {
       "index": 1,
       "slug": "robotics-dao.evidence-monitor",
-      "address": "0x6a5F4Da7c75CD43e0e7059E13458218377b51b27"
+      "address": "0x6a5F4Da7c75CD43e0e7059E13458218377b51b27",
+      "chains": {
+        "monad": "0x6a5F4Da7c75CD43e0e7059E13458218377b51b27",
+        "asi": "1111k2iKMfSQPYGycv8GcK241ZFtwFMgFnFaZtxpX7HPyW1Whvs1r",
+        "solana": "38u7YNyFKqX3x83pzoL5SNV68U4AkcHsJ9yzysuMnWqD"
+      }
     },
     {
       "index": 2,
       "slug": "robotics-dao.research-synthesis-agent",
-      "address": "0xAd66B14EcDA33ECdFdFE18C9d4FcCf0be9b60fD6"
+      "address": "0xAd66B14EcDA33ECdFdFE18C9d4FcCf0be9b60fD6",
+      "chains": {
+        "monad": "0xAd66B14EcDA33ECdFdFE18C9d4FcCf0be9b60fD6",
+        "asi": "1111w5PYKEYJrr7xLttgegpjiYnavH7vNxLfc7dv6JC3qz48uKdAs",
+        "solana": "6q68Vw7GNEPdCczFBEcBZEbSBJLB3bzaaUme1ScsLcW"
+      }
     },
     {
       "index": 3,
       "slug": "robotics-dao.collaborator-scout",
-      "address": "0x80d61968a61062EDe0CDC975089fF736e8703E5e"
+      "address": "0x80d61968a61062EDe0CDC975089fF736e8703E5e",
+      "chains": {
+        "monad": "0x80d61968a61062EDe0CDC975089fF736e8703E5e",
+        "asi": "1111c5EiEM74x62AKRVEsW2SqqCyLr41NVzt3sF7dEjwQ5wk7N4jg",
+        "solana": "F8dc6bKMwGmUg95nonofZCXREEyXEw3hD94EKJHJ5smH"
+      }
     },
     {
       "index": 4,
       "slug": "robotics-dao.task-router",
-      "address": "0xF8D5d61e70e6da71061027D34595c7230746B7AB"
+      "address": "0xF8D5d61e70e6da71061027D34595c7230746B7AB",
+      "chains": {
+        "monad": "0xF8D5d61e70e6da71061027D34595c7230746B7AB",
+        "asi": "1111YqVh6LW36jzFQM6BZsE2vUN1qh6hp9ghiD1mUuoHDfqhNvQQP",
+        "solana": "2R2XJTSW8eC3mhsn7PjpCnsg33Cdp4DRGWQhPpk4TJiW"
+      }
     },
     {
       "index": 5,
       "slug": "robotics-dao.proposal-grant-drafter",
-      "address": "0x1592cC3985E9E90df3A41014178F86C78A16a695"
+      "address": "0x1592cC3985E9E90df3A41014178F86C78A16a695",
+      "chains": {
+        "monad": "0x1592cC3985E9E90df3A41014178F86C78A16a695",
+        "asi": "11112U9pDU2dzrnizxE1dKiwcdfZChVXTc85tuRCWHGxg3xTQ172H9",
+        "solana": "9ne4SNqeWG4B1JreTP7NriRtWo9Q44z9KVH2mF5fKfuX"
+      }
     },
     {
       "index": 6,
       "slug": "robotics-dao.progress-tracker",
-      "address": "0x0cf5Fc2C4658C9C4A494761d2F1f6B5db05559a3"
+      "address": "0x0cf5Fc2C4658C9C4A494761d2F1f6B5db05559a3",
+      "chains": {
+        "monad": "0x0cf5Fc2C4658C9C4A494761d2F1f6B5db05559a3",
+        "asi": "1111D499nqsaVanauwuwrd26Bbr1ygvPHBWxXD8exMcKk2tTooquZ",
+        "solana": "7wkL3eUzHxj5tH1FRPueZt5iBF1VjthjSsBn4vp6VzBL"
+      }
     },
     {
       "index": 7,
       "slug": "agentic-payments.coordinator",
-      "address": "0xe8ddd2B0b7705D499d1cCff2aB598833e6F1Ba98"
+      "address": "0xe8ddd2B0b7705D499d1cCff2aB598833e6F1Ba98",
+      "chains": {
+        "monad": "0xe8ddd2B0b7705D499d1cCff2aB598833e6F1Ba98",
+        "asi": "11112LrZ5x8Qrf6bCbE3gkLZBzz9CS9wwb8WpSbsjU2TQnBNHoRKrx",
+        "solana": "2XCAbZxEUgfjiL8xpR1N8A78EcC6kMmRF6vtc7QZJ4JE"
+      }
     },
     {
       "index": 8,
       "slug": "agentic-payments.buyer-agent",
-      "address": "0x158044aA20e0f68844499C1af585CEf582E94923"
+      "address": "0x158044aA20e0f68844499C1af585CEf582E94923",
+      "chains": {
+        "monad": "0x158044aA20e0f68844499C1af585CEf582E94923",
+        "asi": "11112uWDSBRox895SrJYbZbame5QuNq4YL7aQq67wsuZ2Ab62NLQrk",
+        "solana": "8tPD9TgZSMtWRzLviccC7CS4ij2GwYwhgZ2doonXNtwb"
+      }
     },
     {
       "index": 9,
       "slug": "agentic-payments.seller-agent",
-      "address": "0x750b8f2a24079fCb72E46F7767C0DB91a89E76bD"
+      "address": "0x750b8f2a24079fCb72E46F7767C0DB91a89E76bD",
+      "chains": {
+        "monad": "0x750b8f2a24079fCb72E46F7767C0DB91a89E76bD",
+        "asi": "11112SADJfUXGj6iDHetz9mBCSEhfKpsioSweH2ZWyGcT27TFwAKPz",
+        "solana": "KbYiFXu9EPbGQaGP8kkK5kY6APgRLLatsEPRo7cm3aq"
+      }
     },
     {
       "index": 10,
       "slug": "agentic-payments.provisioning-agent",
-      "address": "0x89766F532e5CCa1449489b5e835719fDf87Cd03b"
+      "address": "0x89766F532e5CCa1449489b5e835719fDf87Cd03b",
+      "chains": {
+        "monad": "0x89766F532e5CCa1449489b5e835719fDf87Cd03b",
+        "asi": "111122oHNK3Cr8NLisNGuHSnjF9LATvzUdEzBrQmUPnfUchQmTU47T",
+        "solana": "C34qSRw38E8Qcu4874MNiMr1kquW8JYuGztVWRkFkhLo"
+      }
     },
     {
       "index": 11,
       "slug": "agentic-payments.budget-agent",
-      "address": "0xB739BABC9be918608C212E38328a139895B4aDC7"
+      "address": "0xB739BABC9be918608C212E38328a139895B4aDC7",
+      "chains": {
+        "monad": "0xB739BABC9be918608C212E38328a139895B4aDC7",
+        "asi": "11112Cn5i9eKsPpb6VJWQaXgHNF3sF2Xb2rPG17LUAgfTNGrW3mE5A",
+        "solana": "2HBeF2m7bK1LxMRZiprLoWwzcsa4Vn51MiosTcnMqXkC"
+      }
     },
     {
       "index": 12,
       "slug": "agentic-payments.rail-agent",
-      "address": "0x21f9D68139a2c17a968067580c1c86858Fb388ca"
+      "address": "0x21f9D68139a2c17a968067580c1c86858Fb388ca",
+      "chains": {
+        "monad": "0x21f9D68139a2c17a968067580c1c86858Fb388ca",
+        "asi": "11112qtHshPZZ32eyWkmmkCQzAapav5TsXbgqRXY7RbzcoBBJjzBrw",
+        "solana": "AikRDYpz2GjEybjaonxUL74XxJPV8e5hnL3caSaA7BRU"
+      }
     },
     {
       "index": 13,
       "slug": "robot.crane-lift",
-      "address": "0x7216b7d60E042780B7Ba714e161a6A70DF86AF1B"
+      "address": "0x7216b7d60E042780B7Ba714e161a6A70DF86AF1B",
+      "chains": {
+        "monad": "0x7216b7d60E042780B7Ba714e161a6A70DF86AF1B",
+        "asi": "11112Mzi81UMvg7vc82UM928oWpTYqTw94Uzz9mmW4RfxyL476oFpA",
+        "solana": "DP9WR4H1fEqiuZzHrDowGqCSeyG46b5aE5jGiUQfzbcH"
+      }
     },
     {
       "index": 14,
       "slug": "robot.excavator-trench",
-      "address": "0xfCF5552b6B085430a38E84f92295E106D17e3A98"
+      "address": "0xfCF5552b6B085430a38E84f92295E106D17e3A98",
+      "chains": {
+        "monad": "0xfCF5552b6B085430a38E84f92295E106D17e3A98",
+        "asi": "1111Dtfd3okxL1vee5NtdiS2DAHWSUSWHNpLFH4DfhX7hSCPpyeNA",
+        "solana": "GCXbVxqqAjafp7CiGNUz3fjv8NpxZPwUMCQZuBmV9jCE"
+      }
     },
     {
       "index": 15,
       "slug": "robot.forklift-run",
-      "address": "0x6A57254Dd6C4123e2B83647D8E93b1BA0d5e108e"
+      "address": "0x6A57254Dd6C4123e2B83647D8E93b1BA0d5e108e",
+      "chains": {
+        "monad": "0x6A57254Dd6C4123e2B83647D8E93b1BA0d5e108e",
+        "asi": "1111Zr4iQLJQaNHpwRSpApdJNnyVTsYcoZNHHDnFaeBTZSg1V5fju",
+        "solana": "GTxTGRnbDkpHD6iXdELc757ENKvy198wuxybmd3CdP72"
+      }
     },
     {
       "index": 16,
       "slug": "robot.weld-bead",
-      "address": "0x0aB0A4BE0432C5d7218C246daB0F251bd2FBe977"
+      "address": "0x0aB0A4BE0432C5d7218C246daB0F251bd2FBe977",
+      "chains": {
+        "monad": "0x0aB0A4BE0432C5d7218C246daB0F251bd2FBe977",
+        "asi": "1111Zedc4StQHeSKLddWzju8VYQ8ZchUT4HTsms5WgUSjcD4s5hjd",
+        "solana": "1Dr7CqpoNc7vDNZaq16amhZL8zJPVh3PeSBjBMHNVRJ"
+      }
     },
     {
       "index": 17,
       "slug": "robot.scaffold-bay",
-      "address": "0xd4F56045609A3d85E228Ef4231c945A33ebcC985"
+      "address": "0xd4F56045609A3d85E228Ef4231c945A33ebcC985",
+      "chains": {
+        "monad": "0xd4F56045609A3d85E228Ef4231c945A33ebcC985",
+        "asi": "1111BSGVDG4zGHXL2L5WtmhkuVqs6cxZbJ9vPF7zoWnqV36MZqQKz",
+        "solana": "FQW4jmN4FZpX8KWSdxFpRu5ij9eLmDYenz24ZDKgyYps"
+      }
     },
     {
       "index": 18,
       "slug": "robot.rigging-signals",
-      "address": "0x4059d01F7d66265Ba4C9614B2256DC335b4F72E8"
+      "address": "0x4059d01F7d66265Ba4C9614B2256DC335b4F72E8",
+      "chains": {
+        "monad": "0x4059d01F7d66265Ba4C9614B2256DC335b4F72E8",
+        "asi": "1111RKsT36KL9AdBx7SbVg2TCMJNtfXcwWvwG3USQykHAADo7mx6M",
+        "solana": "5kkfQUKQsq6CLeWGc3rvaeDKmtLqnzPNpcose16Qs5cN"
+      }
     },
     {
       "index": 19,
       "slug": "robot.load-chart",
-      "address": "0x2d6b93202781f77aFc058F8A94609cE85F46e222"
+      "address": "0x2d6b93202781f77aFc058F8A94609cE85F46e222",
+      "chains": {
+        "monad": "0x2d6b93202781f77aFc058F8A94609cE85F46e222",
+        "asi": "111193ZfqFWepeDTmAG4zBKrx8QXfiD6YTocHuds16ZNhGP9fFF17",
+        "solana": "2ABawa8Djr3mXjCA3w7CcmGhEL7WdBJseyhdJKE1iuFH"
+      }
     },
     {
       "index": 20,
       "slug": "robot.pressure-washer",
-      "address": "0x8E7FB9b8E774553aFdc975C0b357DEAcA1eBD878"
+      "address": "0x8E7FB9b8E774553aFdc975C0b357DEAcA1eBD878",
+      "chains": {
+        "monad": "0x8E7FB9b8E774553aFdc975C0b357DEAcA1eBD878",
+        "asi": "11112hfMDdGudM6CPKWCDT83gUPj3pSDRYJXL1JxGoxFi62nXxxXmX",
+        "solana": "5R3WmDiFd1b5gRkGrfehHixwAjLvcgNr6phHKgEYjbNp"
+      }
     },
     {
       "index": 21,
       "slug": "robot.airless-sprayer",
-      "address": "0xa441dfC7535f0c81557b9a6a3a58B257A568CA7c"
+      "address": "0xa441dfC7535f0c81557b9a6a3a58B257A568CA7c",
+      "chains": {
+        "monad": "0xa441dfC7535f0c81557b9a6a3a58B257A568CA7c",
+        "asi": "1111MhwjMZezNDKs6V4SUTEM2ebjvFRcUEvSuT7HvzRR2VqHxTvf2",
+        "solana": "FkuYZZf1wXw5NpiAXhxSZWqfvBfuKBqPMVkAAMStpF6B"
+      }
     },
     {
       "index": 22,
       "slug": "robot.boom-lift",
-      "address": "0x67800955465e536ba1797A1Ef5341D0c0d647D75"
+      "address": "0x67800955465e536ba1797A1Ef5341D0c0d647D75",
+      "chains": {
+        "monad": "0x67800955465e536ba1797A1Ef5341D0c0d647D75",
+        "asi": "111125Zed9X8fxcupPGaxa9ckHSoY2ijDEcdMoyukVcnTRXWNh64nV",
+        "solana": "Ff1RHNm9ZmMa3TMW8N2E16E6z3pD5auYE6nQZYgviz3r"
+      }
     },
     {
       "index": 23,
       "slug": "robot.overhead-crane",
-      "address": "0xD877F1E1E6D2Aa6Dd979Eee4c31e7af1EAb3D80A"
+      "address": "0xD877F1E1E6D2Aa6Dd979Eee4c31e7af1EAb3D80A",
+      "chains": {
+        "monad": "0xD877F1E1E6D2Aa6Dd979Eee4c31e7af1EAb3D80A",
+        "asi": "1111kkegCJAQUxrxLhEqaCaovWandFRpaCAWYjzTr5XVXbuvKQpGC",
+        "solana": "DB8gTPzjbzLE2PVNTLrhXDAk32aUgDRpiGFb67e7A3qH"
+      }
     },
     {
       "index": 24,
       "slug": "robot.hall-robotics",
-      "address": "0xF20728837F908B9E477A86dd6471E5CeCF36b979"
+      "address": "0xF20728837F908B9E477A86dd6471E5CeCF36b979",
+      "chains": {
+        "monad": "0xF20728837F908B9E477A86dd6471E5CeCF36b979",
+        "asi": "11112PMZCX23qTWzvJqHwcjBPCErN1e11qEWQYdC48oLyFMsg2nYqm",
+        "solana": "DLfTmEfpWCQ8nSkMJwQVuoHuzn56v5oGv4JcQXNhWcz6"
+      }
     },
     {
       "index": 25,
       "slug": "robot.hall-plc-techs",
-      "address": "0xf6C3111B1EfF88b0F9A7Aa0960Cbd127CCf66c4a"
+      "address": "0xf6C3111B1EfF88b0F9A7Aa0960Cbd127CCf66c4a",
+      "chains": {
+        "monad": "0xf6C3111B1EfF88b0F9A7Aa0960Cbd127CCf66c4a",
+        "asi": "1111KJD1C17Q4QPKm4hVgsV2ZKALQfnhaymkhFNFzrkCDJmB8JeWk",
+        "solana": "DfrLYQjHBFwtFUt1qyowhtLrVHnuwiZBPm4phVUTbyke"
+      }
     },
     {
       "index": 26,
       "slug": "robot.hall-survey-drone",
-      "address": "0x71B6d583e15B3A1c954c0051F9A0a051bF3487d3"
+      "address": "0x71B6d583e15B3A1c954c0051F9A0a051bF3487d3",
+      "chains": {
+        "monad": "0x71B6d583e15B3A1c954c0051F9A0a051bF3487d3",
+        "asi": "11116J5D8wukEWsSbg9G68cCWfiheiv3gqBtzMaGP1dSM3niWzx8u",
+        "solana": "6XotV9sSqhXPkUCfHmmkBhUC2ZqrE79iPGHpR1SGyLvD"
+      }
     },
     {
       "index": 27,
       "slug": "robot.hall-port-crane",
-      "address": "0xc33209Cd1eDfbA9B841D4481661A8e8822133e79"
+      "address": "0xc33209Cd1eDfbA9B841D4481661A8e8822133e79",
+      "chains": {
+        "monad": "0xc33209Cd1eDfbA9B841D4481661A8e8822133e79",
+        "asi": "1111216yWFNxvk4kG5r9EbE5BrbMspLyhDS489AMhmdNHEV9qEBstP",
+        "solana": "JADEE3Wit7DwRRLz7qKC3qGCj4VJYmXVo6XegdTZPXUX"
+      }
     },
     {
       "index": 28,
       "slug": "robot.hall-machinists",
-      "address": "0xC3c8d608ac904745e8a1aF0F73387208C3aB19cE"
+      "address": "0xC3c8d608ac904745e8a1aF0F73387208C3aB19cE",
+      "chains": {
+        "monad": "0xC3c8d608ac904745e8a1aF0F73387208C3aB19cE",
+        "asi": "1111ZdcG4zEKvQbKNjctPL5dLStMreutWYCfurT5bazqWM6yxfpTK",
+        "solana": "3beBtmcaaKRYUr69PhqxU6NcAntLdZD4A7Cp14Gu6Gpj"
+      }
     },
     {
       "index": 29,
       "slug": "robot.hall-elevator",
-      "address": "0x9372d56164C4C06b6B2234153db87112c5732c0C"
+      "address": "0x9372d56164C4C06b6B2234153db87112c5732c0C",
+      "chains": {
+        "monad": "0x9372d56164C4C06b6B2234153db87112c5732c0C",
+        "asi": "1111bQq9fSPpFqwBDvBuRAF3XkL7o5nfQSUTQ8cDeFMknn15UkPp1",
+        "solana": "7v3tAbNbADGyUD8Hz9ge1bRzMHRoNE2y9rsE6pBohixE"
+      }
     },
     {
       "index": 30,
       "slug": "robot.hall-concrete-pump",
-      "address": "0x5A42881B64fc5b11ED40bAD2B1d076ED03Bfa215"
+      "address": "0x5A42881B64fc5b11ED40bAD2B1d076ED03Bfa215",
+      "chains": {
+        "monad": "0x5A42881B64fc5b11ED40bAD2B1d076ED03Bfa215",
+        "asi": "11112TxyNSNCwkzLFo2WmnwjFr11BFyUthnSSq7e54WD46EKe5UpGA",
+        "solana": "D976uTD1EJV1God7JPQSdfcztFUwJ4s1SBcPWzqzP2im"
+      }
     },
     {
       "index": 31,
       "slug": "virtuals.tactile-sense",
-      "address": "0x56dF95617AE1F24144F26FE5a7Df68F73870157c"
+      "address": "0x56dF95617AE1F24144F26FE5a7Df68F73870157c",
+      "chains": {
+        "monad": "0x56dF95617AE1F24144F26FE5a7Df68F73870157c",
+        "asi": "1111ir9wX6nQxR9vZhbZQmA84AEJp6MLN3Z2AgqgYff3Bx32Bo66o",
+        "solana": "GiqSXWp94kyuUsnxakqQzY76puyt1SNnxXou77sdwCbK"
+      }
     },
     {
       "index": 32,
       "slug": "virtuals.acp-01a1225a",
-      "address": "0xEB15d113a4B2bC0c2e9E19AfA68903e51469E7D6"
+      "address": "0xEB15d113a4B2bC0c2e9E19AfA68903e51469E7D6",
+      "chains": {
+        "monad": "0xEB15d113a4B2bC0c2e9E19AfA68903e51469E7D6",
+        "asi": "1111F6Uka2EfJTjQYkzqTHtduhT9ew9vDrfiwp5wVhPTggeE2pmBP",
+        "solana": "8R9UomuF5ggoxQwdgP3eCNoz2bMKRkrj1n5kWyriCdjU"
+      }
     },
     {
       "index": 33,
       "slug": "virtuals.acp-019ebb52",
-      "address": "0x6fe7Ed04633F7Da2E03901cE654AD62AaA4Daf8F"
+      "address": "0x6fe7Ed04633F7Da2E03901cE654AD62AaA4Daf8F",
+      "chains": {
+        "monad": "0x6fe7Ed04633F7Da2E03901cE654AD62AaA4Daf8F",
+        "asi": "11112rVxct9C6PkcdMWbcu2qLKymkVmEHGBzWuZG3PBbvhWaPgmP1U",
+        "solana": "Bjcugr48qZ1oCGt3rp3nKhYRKNqF3NGefb6zthFErU8T"
+      }
     },
     {
       "index": 34,
       "slug": "omega.agi-corp-hub",
-      "address": "0xad674D44403eB8cCC462F04AAB4533a65dEd724C"
+      "address": "0xad674D44403eB8cCC462F04AAB4533a65dEd724C",
+      "chains": {
+        "monad": "0xad674D44403eB8cCC462F04AAB4533a65dEd724C",
+        "asi": "11112nPeaLYEWHEarc5iXkYgAZPErwL1KKhH5cemms62LNarzHyQe7",
+        "solana": "75DC5cjgUVWBcyoCkA36kknwbAugkWkxVSTLMaRJyweK"
+      }
     },
     {
       "index": 35,
       "slug": "omega.cognition-x",
-      "address": "0x7DE34C55fCfEA3e9Eece33692f9cD8961091DbCF"
+      "address": "0x7DE34C55fCfEA3e9Eece33692f9cD8961091DbCF",
+      "chains": {
+        "monad": "0x7DE34C55fCfEA3e9Eece33692f9cD8961091DbCF",
+        "asi": "11111Bg5BqDFFQKXnpRqPX12KTUtEmaaq6RhB9q9XzBwVCTPJuadJ",
+        "solana": "FjuoEzQxC8AqU54HQgD6S5X6hQcURrmzxmfYo44erpg9"
+      }
     },
     {
       "index": 36,
       "slug": "omega.empathic-x",
-      "address": "0x752D08C35168e621ae113e55AcF6e0Eedb95745B"
+      "address": "0x752D08C35168e621ae113e55AcF6e0Eedb95745B",
+      "chains": {
+        "monad": "0x752D08C35168e621ae113e55AcF6e0Eedb95745B",
+        "asi": "1111Coy1JXD1yPTuGntx8JRYpywFJyY9LcXAPn5NXSk4GjeGEfGLB",
+        "solana": "4ESoMVaaw9tBjCtXioRYFiFgbPcdZpPwccscEV2mkpK6"
+      }
     },
     {
       "index": 37,
       "slug": "omega.diagnostic-x",
-      "address": "0x82fdD9657837CbA90DB4CbB8D35CC72C60174176"
+      "address": "0x82fdD9657837CbA90DB4CbB8D35CC72C60174176",
+      "chains": {
+        "monad": "0x82fdD9657837CbA90DB4CbB8D35CC72C60174176",
+        "asi": "111122snhxwCZkeYjeLWNe3eiZZYE1dVkufYzUzPA8LXEgDfBLtpS8",
+        "solana": "SknjzHpSZGcruUrdoVArW7iZdamwUJFeoZGji1Prgg2"
+      }
     },
     {
       "index": 38,
       "slug": "omega.s04-curable-x",
-      "address": "0x8bAfcdF97FaF0d7206fE724CadB95685CA024d76"
+      "address": "0x8bAfcdF97FaF0d7206fE724CadB95685CA024d76",
+      "chains": {
+        "monad": "0x8bAfcdF97FaF0d7206fE724CadB95685CA024d76",
+        "asi": "11112rqo9HUkNmWAMQxaMmz2npjvvPyTxok5GxtxQKoHm4EfdXAUtn",
+        "solana": "BBq9nfbTzeaPZ2nzGzc6R3FFLSXRUkBnbaLUiA34ERQL"
+      }
     },
     {
       "index": 39,
       "slug": "omega.s05-biopharma-go",
-      "address": "0x7895284E689de23b6f5954FD2f5F0A9097e3885A"
+      "address": "0x7895284E689de23b6f5954FD2f5F0A9097e3885A",
+      "chains": {
+        "monad": "0x7895284E689de23b6f5954FD2f5F0A9097e3885A",
+        "asi": "11112sstQDsAEPUeDeiYLQWj4ZQeYWB6K6mfgnL58ybVHwVhfdSd7J",
+        "solana": "H926hALTHA7xjiMHYepnPQovFfoPDRtaCdrrH4ZvBqhF"
+      }
     },
     {
       "index": 40,
       "slug": "omega.s06-blockchain",
-      "address": "0x469f7D49100229eFeB7514EB449f5D1B2863eBC0"
+      "address": "0x469f7D49100229eFeB7514EB449f5D1B2863eBC0",
+      "chains": {
+        "monad": "0x469f7D49100229eFeB7514EB449f5D1B2863eBC0",
+        "asi": "1111bdh5xEWm2LXZ1rWFzXraUSnu7pSQdj2JfK6wmibxCT2323bDY",
+        "solana": "6E4hN9P9hBCm3kzphTwEUX4Hvt6u5JNXQymFWyVxCESd"
+      }
     },
     {
       "index": 41,
       "slug": "omega.s07-divine-dao",
-      "address": "0x402DD1a1d8cC7a338C970e21D58b0905Fc0DF1B8"
+      "address": "0x402DD1a1d8cC7a338C970e21D58b0905Fc0DF1B8",
+      "chains": {
+        "monad": "0x402DD1a1d8cC7a338C970e21D58b0905Fc0DF1B8",
+        "asi": "11112HeFXRix5ZjJ9P86CqanRE73f192bzqA5STJVX1xuGcJhhDLcj",
+        "solana": "2zXaazbg3tBwiakMeQSWioC9ahvXum4ukrpEZrXJaZKH"
+      }
     },
     {
       "index": 42,
       "slug": "omega.locator-x",
-      "address": "0xA7f271276D18BdbDAcfc156485bdA4B8d9ccE976"
+      "address": "0xA7f271276D18BdbDAcfc156485bdA4B8d9ccE976",
+      "chains": {
+        "monad": "0xA7f271276D18BdbDAcfc156485bdA4B8d9ccE976",
+        "asi": "11112Jxa7pcpqievUL4GW5XKUHQPEBcD6p5Rqypwz5GKrw5b82WR9j",
+        "solana": "qBCuBvUJvFPUd4ikFp1nMCfVVJYqS3YkrxE3GwGTBBd"
+      }
     },
     {
       "index": 43,
       "slug": "omega.s09-astrological-x",
-      "address": "0xD11bB9311267A679644642f098F89fBC5A466952"
+      "address": "0xD11bB9311267A679644642f098F89fBC5A466952",
+      "chains": {
+        "monad": "0xD11bB9311267A679644642f098F89fBC5A466952",
+        "asi": "111127ipwpEUHhkDEMCTKiLHoEgH79hcQj2LzjdjuiGf7rN9BbMmgc",
+        "solana": "GvbqYBUkfUGHz3Jrwgt3EjaFv3nC9jBLdHx2VegmXNtb"
+      }
     },
     {
       "index": 44,
       "slug": "omega.smartciti-holodeck",
-      "address": "0x446639C557a0aB52C86F26D5e250029f60f43232"
+      "address": "0x446639C557a0aB52C86F26D5e250029f60f43232",
+      "chains": {
+        "monad": "0x446639C557a0aB52C86F26D5e250029f60f43232",
+        "asi": "11112qVR8wPu1CyexWFNk8C1BG9rsS3K8nFYZ4YfdGQDHDrjcwAUUm",
+        "solana": "EhFHDBwBX3zmPbjwbcW11SmuzZG1b6xUTuAzM1XFsdL2"
+      }
     },
     {
       "index": 45,
       "slug": "omega.s11-molecular",
-      "address": "0xcaAD88b1AE61B4A8eFCdB3346Ba020F29d3B7b4F"
+      "address": "0xcaAD88b1AE61B4A8eFCdB3346Ba020F29d3B7b4F",
+      "chains": {
+        "monad": "0xcaAD88b1AE61B4A8eFCdB3346Ba020F29d3B7b4F",
+        "asi": "1111nRf4dx4G3QSfkVFJDBd9QmYGciRG6e8mK6sipNgWZpXez38YZ",
+        "solana": "2zX9VwwTZNddYuRRoVPW7YLXA9qS1ceysQqCKCPk15PY"
+      }
     },
     {
       "index": 46,
       "slug": "omega.s12-parking-smart-x",
-      "address": "0x13b92729710b9D8c8FB50c42ecFb9b69053fA65a"
+      "address": "0x13b92729710b9D8c8FB50c42ecFb9b69053fA65a",
+      "chains": {
+        "monad": "0x13b92729710b9D8c8FB50c42ecFb9b69053fA65a",
+        "asi": "1111VoJT35YHQeoJBAio5fKajMp4LWsegcTNPEhSNSiojWnx5pG3o",
+        "solana": "2Qo2yaMnF1dJWqxVv1DcYJR6g1A2LvhVd6R4niw2W9bn"
+      }
     },
     {
       "index": 47,
       "slug": "omega.s13-gonstead-x",
-      "address": "0x30b3380E507C80660cD816428A4C399F04b6761A"
+      "address": "0x30b3380E507C80660cD816428A4C399F04b6761A",
+      "chains": {
+        "monad": "0x30b3380E507C80660cD816428A4C399F04b6761A",
+        "asi": "1111JWtH8hrMTX5tVME53nASr9mNDCG3X3aurETPkDMNrQ8YLj2B5",
+        "solana": "6H2qJ5KXKnxHcqYF1ZGuHFv2foiCycwYMASbhrakvzgT"
+      }
     },
     {
       "index": 48,
       "slug": "omega.s14-askdoc-x",
-      "address": "0x48AD3e3090F0364E74127E15150d2f36dF85Cc79"
+      "address": "0x48AD3e3090F0364E74127E15150d2f36dF85Cc79",
+      "chains": {
+        "monad": "0x48AD3e3090F0364E74127E15150d2f36dF85Cc79",
+        "asi": "111122CZSQuiCxRadm59ukfCtbTvnjMJHgjVGG9q3hMnbmFpBhZduU",
+        "solana": "94uJfEnRXuL1auFSJnpKAiGobiFNHXGP5e13TTqRiTTK"
+      }
     },
     {
       "index": 49,
       "slug": "omega.s15-romanbridge-dao",
-      "address": "0xe7a7fFe514f42A3498972860a781B6eB22DE5962"
+      "address": "0xe7a7fFe514f42A3498972860a781B6eB22DE5962",
+      "chains": {
+        "monad": "0xe7a7fFe514f42A3498972860a781B6eB22DE5962",
+        "asi": "11112cAAcRnEfAYDVsdcMYHDR2hnLDmnBw9mUqL24JcCwiGWm9WNPr",
+        "solana": "A8YHP6NvWmyHPfcXdcNgh13X1qiKxiqXtbJCJvwUorcW"
+      }
     },
     {
       "index": 50,
       "slug": "omega.s16-echodawn-dao",
-      "address": "0xf3d3D8156A3cD2B8499EF46CcE222D2c80c4E970"
+      "address": "0xf3d3D8156A3cD2B8499EF46CcE222D2c80c4E970",
+      "chains": {
+        "monad": "0xf3d3D8156A3cD2B8499EF46CcE222D2c80c4E970",
+        "asi": "11115BxPypirqz5eiGcLEA3YwbZUpvGTS6DLe58L9njBpD85v4Cab",
+        "solana": "GehRhRzzKwdvTDA4rdBZ3S87t38cJb2KCwnXbZgAWjGJ"
+      }
     },
     {
       "index": 51,
       "slug": "omega.s17-curable-blockchain-dao",
-      "address": "0x98be1D1581cBD9e6eFB6a0A31D2268041DCe3c6c"
+      "address": "0x98be1D1581cBD9e6eFB6a0A31D2268041DCe3c6c",
+      "chains": {
+        "monad": "0x98be1D1581cBD9e6eFB6a0A31D2268041DCe3c6c",
+        "asi": "1111MTqJCPzparMm4Df2ajMT7h6NGdwwJqndafzuYsTfNgKGMFzWd",
+        "solana": "CAJTUM55FJFuwHVALipJRqTGre1NHML7Y7sMw1uYxzrv"
+      }
     },
     {
       "index": 52,
       "slug": "omega.biota-blockchain",
-      "address": "0x8B3EF309E0f9311FFFd5468d58ED89BAC03Fb12B"
+      "address": "0x8B3EF309E0f9311FFFd5468d58ED89BAC03Fb12B",
+      "chains": {
+        "monad": "0x8B3EF309E0f9311FFFd5468d58ED89BAC03Fb12B",
+        "asi": "1111q4R3bJKG5v5Ay5urHYHrPeak3Nv3LiL7ioHijv71N3xe4sRXs",
+        "solana": "9aWLk16FGYKcnBdJRHPH11i42q4kyoqBpXsu6z6JQxPs"
+      }
     },
     {
       "index": 53,
       "slug": "omega.s19-moscone-x",
-      "address": "0x659679ACFaf558552809E31996276AE8B3675105"
+      "address": "0x659679ACFaf558552809E31996276AE8B3675105",
+      "chains": {
+        "monad": "0x659679ACFaf558552809E31996276AE8B3675105",
+        "asi": "11112ETqBWLcYU57zn6DhQ4zhxMGMqtPj6bLn9A6jMZbrmqQzCcDF8",
+        "solana": "HvrgLRPx1LnGury3ifzZvwmBt8RWvDHjC5H8hsKyAnvR"
+      }
     },
     {
       "index": 54,
       "slug": "omega.s20-cmmc",
-      "address": "0x172E194824fDc2Ba7352362Fa4df773AA0A91263"
+      "address": "0x172E194824fDc2Ba7352362Fa4df773AA0A91263",
+      "chains": {
+        "monad": "0x172E194824fDc2Ba7352362Fa4df773AA0A91263",
+        "asi": "11112NNepydxyXPxJCPLvF94q8ai23QZ58AxUqEyppERDZBfNiN1MQ",
+        "solana": "Hdfc3AjCSeGrLSceq94uYF6BPMiBtV9txwufngwpqXxh"
+      }
     },
     {
       "index": 55,
       "slug": "omega.s21-incubator-dao",
-      "address": "0x4109c4a5ff95cEcD7257Cb8a8094e9F6F7a117a9"
+      "address": "0x4109c4a5ff95cEcD7257Cb8a8094e9F6F7a117a9",
+      "chains": {
+        "monad": "0x4109c4a5ff95cEcD7257Cb8a8094e9F6F7a117a9",
+        "asi": "11112gtXEZGdyCzUiA8TDEsDABp6ur216UyBwGDDVRPTwYYoJLY4dr",
+        "solana": "5J8WHqTpRcQ6TMzsy1Ryz8yKtm91yobdM6D5UbHGvFC1"
+      }
     },
     {
       "index": 56,
       "slug": "omega.s22-get-delivery-dao",
-      "address": "0x94a8bEc03BF53E2bCA6e27997A7C14e25Ead5b40"
+      "address": "0x94a8bEc03BF53E2bCA6e27997A7C14e25Ead5b40",
+      "chains": {
+        "monad": "0x94a8bEc03BF53E2bCA6e27997A7C14e25Ead5b40",
+        "asi": "11112cehmMyEVzeyUf92325bs5jULV6JcyHRPocmzbn91rmeUbjvm5",
+        "solana": "GcL3cydbzmdTaAj8gqR3wQzaa7WhdAdDsrPwMumw4EED"
+      }
     },
     {
       "index": 57,
       "slug": "omega.s23-avatar-chat",
-      "address": "0x1cb39a288A5153021f86Eef37ca459EeA75Fe77f"
+      "address": "0x1cb39a288A5153021f86Eef37ca459EeA75Fe77f",
+      "chains": {
+        "monad": "0x1cb39a288A5153021f86Eef37ca459EeA75Fe77f",
+        "asi": "1111MjGAbfJ5Vzma3pz7P6vZ1tfDXWvCHqJeDDz39KvdMXVrT96NH",
+        "solana": "5fmuUH3Jwqn5Ho8FwyhJfwW58noW2v5sk4K2KBkmmYjk"
+      }
     },
     {
       "index": 58,
       "slug": "omega.s24-donatello-dao",
-      "address": "0x88Ea1FbEa2b063f1702b47c25934211881C3a1D2"
+      "address": "0x88Ea1FbEa2b063f1702b47c25934211881C3a1D2",
+      "chains": {
+        "monad": "0x88Ea1FbEa2b063f1702b47c25934211881C3a1D2",
+        "asi": "111129LPF4p7M8pmwz971zvvXR6gGawU3gzfULiaMxNoY9obxpRWGW",
+        "solana": "DYirDUo76uc1DUaj4dg6pNVcvSFXScya2gfK13Ry6Jpt"
+      }
     },
     {
       "index": 59,
       "slug": "omega.s25-mypet-ai",
-      "address": "0x3eb139ebba885aAB23D8b2e932d4285c85dE5869"
+      "address": "0x3eb139ebba885aAB23D8b2e932d4285c85dE5869",
+      "chains": {
+        "monad": "0x3eb139ebba885aAB23D8b2e932d4285c85dE5869",
+        "asi": "11112exotXE1Umabc4sgT9ueaUDSR3mYJrrDGbePqD26Ajg4CJVBiR",
+        "solana": "52L3oHo5uXoRNpQYPVwYmVdMGoZAKsq8PSeVQpGxGAAE"
+      }
     },
     {
       "index": 60,
       "slug": "omega.s26-lyka-dao",
-      "address": "0x31331F1DF2D84853384412e5513f0a5287e86dc4"
+      "address": "0x31331F1DF2D84853384412e5513f0a5287e86dc4",
+      "chains": {
+        "monad": "0x31331F1DF2D84853384412e5513f0a5287e86dc4",
+        "asi": "1111b9hLZxNJcwwcAj4RToZeAZHZELSg6B6KoujyUVFUiMSqvVMfh",
+        "solana": "CECTwR8yhM2o8cmamd31HAJxrphyWyLzRseWicnnuJbz"
+      }
     },
     {
       "index": 61,
       "slug": "omega.s27-genomic-dao",
-      "address": "0x35D022b6fa183f255EFdb63c5D6Ee1d229Cd4867"
+      "address": "0x35D022b6fa183f255EFdb63c5D6Ee1d229Cd4867",
+      "chains": {
+        "monad": "0x35D022b6fa183f255EFdb63c5D6Ee1d229Cd4867",
+        "asi": "1111cq6RZt6eJhCT5t2kyc6pWdFd3886Wo1nJZENd636HieBLxWEP",
+        "solana": "A82jxZ6pxNB9LPoUVBM2x3ufwaihBry2cWk1bv9genyf"
+      }
     },
     {
       "index": 62,
       "slug": "omega.s28-genomic-blockchain",
-      "address": "0x6728C1CCa54D582b8E20717Ab4DA8d62f6477240"
+      "address": "0x6728C1CCa54D582b8E20717Ab4DA8d62f6477240",
+      "chains": {
+        "monad": "0x6728C1CCa54D582b8E20717Ab4DA8d62f6477240",
+        "asi": "11112DuiDSkha1NwZoKofuAyxkevrAuJUg8RvjcWbcJyZk7YUxSRC3",
+        "solana": "1wGWkj9LL6RUqrxTqFWkZz85USNwt1YvJTBK7pPL3yL"
+      }
     },
     {
       "index": 63,
       "slug": "omega.s29-metaverse-dao",
-      "address": "0x833Ffd68B640708Ab26911e37C25BFDFdcdF01d7"
+      "address": "0x833Ffd68B640708Ab26911e37C25BFDFdcdF01d7",
+      "chains": {
+        "monad": "0x833Ffd68B640708Ab26911e37C25BFDFdcdF01d7",
+        "asi": "111128KmiPRYSwXBB1xxM3Vb8eheDpq2aVTagd1GouBheuuhg9j2mA",
+        "solana": "CWg8N4KBuzzsUdQJFrSZUQB1JaQc1bZbg4Q2nxb5Dsgf"
+      }
     },
     {
       "index": 64,
       "slug": "omega.robotics-dao",
-      "address": "0xe8f2e1CCf15C77b7d7FdF48244a65424326F43c2"
+      "address": "0xe8f2e1CCf15C77b7d7FdF48244a65424326F43c2",
+      "chains": {
+        "monad": "0xe8f2e1CCf15C77b7d7FdF48244a65424326F43c2",
+        "asi": "11112ueAa9XTKgnVbZeDgWaMLfA3GT8uECgthrHvUEFqMjtB9AJgzn",
+        "solana": "Cxnh3wmjioN5siZMSZ4ST77Y8GfqLyriVcfvyv5Skeap"
+      }
     },
     {
       "index": 65,
       "slug": "omega.s31-aerospace-dao",
-      "address": "0x7eD4Cc8b7e12B915bB7e6b9d63E33877d60b9980"
+      "address": "0x7eD4Cc8b7e12B915bB7e6b9d63E33877d60b9980",
+      "chains": {
+        "monad": "0x7eD4Cc8b7e12B915bB7e6b9d63E33877d60b9980",
+        "asi": "11112MmMJEwGZD6tU4rrwh4zLz7ibdD1BXa2qvSKzQXV9QLxewVyWs",
+        "solana": "GyVj93LbPhnaNMQYQHTBp51sEntfyJ6uQGEK16siS987"
+      }
     },
     {
       "index": 66,
       "slug": "omega.s32-solar-dao",
-      "address": "0xFE2082CE1374F219942Cf78DBD8cd57172751495"
+      "address": "0xFE2082CE1374F219942Cf78DBD8cd57172751495",
+      "chains": {
+        "monad": "0xFE2082CE1374F219942Cf78DBD8cd57172751495",
+        "asi": "1111219TtxYvvjMs3icp4T6Ddz7e8nTvkwsMf493asopUtQjgeKwU",
+        "solana": "7VQ2wkCyU5pgkRGe7znKMRFqWGeEmiqoqnsAFqbR35AH"
+      }
     },
     {
       "index": 67,
       "slug": "omega.s33-infogurus",
-      "address": "0x058Cd0107a1AE8EA34ed98F4291e3F2F07C8C5e3"
+      "address": "0x058Cd0107a1AE8EA34ed98F4291e3F2F07C8C5e3",
+      "chains": {
+        "monad": "0x058Cd0107a1AE8EA34ed98F4291e3F2F07C8C5e3",
+        "asi": "1111f5156VUXftYobfNLvxnxbP5QJ8epLAbyKEKZE8rMJ2orrHCZo",
+        "solana": "AjPFxmZkGCZ6HTsNfkTcSM9ST2XSDJp78G46UtvBtkff"
+      }
     },
     {
       "index": 68,
       "slug": "omega.s34-als-dao",
-      "address": "0x9740324216AE8204ac0363DD7908128b59d90e20"
+      "address": "0x9740324216AE8204ac0363DD7908128b59d90e20",
+      "chains": {
+        "monad": "0x9740324216AE8204ac0363DD7908128b59d90e20",
+        "asi": "1111RoN73w4Sc7u67rfXC3pXf25bWzgX3PrHB1hqhByKoCGgAZSw4",
+        "solana": "9bzfNPuuediXQnCS8zBB65gPEdPB2DFmcDBrnEuUgYgq"
+      }
     },
     {
       "index": 69,
       "slug": "omega.s35-parkinsons-dao",
-      "address": "0x681eA843bf60E0D9F1A81675FdBdB3099d7170a9"
+      "address": "0x681eA843bf60E0D9F1A81675FdBdB3099d7170a9",
+      "chains": {
+        "monad": "0x681eA843bf60E0D9F1A81675FdBdB3099d7170a9",
+        "asi": "1111iwEAT5NmZMBdpVxdJbE5neskfg2KYDHv7VxUMTjA8cPLGhKtj",
+        "solana": "PFGkXTv2iXrDau2sgUtfHWVv3dwYX9b3UZdTuUbs2mj"
+      }
     },
     {
       "index": 70,
       "slug": "omega.cancer-dao",
-      "address": "0x10eD1Fad16D9F0429D06d6060e79C3aE30C0978f"
+      "address": "0x10eD1Fad16D9F0429D06d6060e79C3aE30C0978f",
+      "chains": {
+        "monad": "0x10eD1Fad16D9F0429D06d6060e79C3aE30C0978f",
+        "asi": "11112T5uqLFeUdSvDocFYyfKMd13Z1Muv2dnc1G6vYtkVmSyffU8At",
+        "solana": "F6vmVbYEpwL3T657bYC42M4EXCbZh3r6HMPwSjSBgBNA"
+      }
     },
     {
       "index": 71,
       "slug": "omega.ecology-dao",
-      "address": "0x2F1cb69111F35Ed69EE072c54CbD29F84Da49986"
+      "address": "0x2F1cb69111F35Ed69EE072c54CbD29F84Da49986",
+      "chains": {
+        "monad": "0x2F1cb69111F35Ed69EE072c54CbD29F84Da49986",
+        "asi": "11112Debc2aRnxwUq6GNs8AApHe25Zyce9Czp4Ku26D3sWeW1KZQsN",
+        "solana": "A1QrdgxxzPUkn4eYdrzpzvAXiQz9z18ft4f2ia9jr7n5"
+      }
     },
     {
       "index": 72,
       "slug": "omega.climate-dao",
-      "address": "0xD9135a84336C84D7Ec25C913e9215C592ee2215F"
+      "address": "0xD9135a84336C84D7Ec25C913e9215C592ee2215F",
+      "chains": {
+        "monad": "0xD9135a84336C84D7Ec25C913e9215C592ee2215F",
+        "asi": "111128mLzKduxUSczdJRecgQNVLL8DJ9oshgXPFPJkHssHhWBxiApd",
+        "solana": "CU8ovUyQRJFVDt75DZDqjF9Gn56njDhcq91cqGtUVfgW"
+      }
     },
     {
       "index": 73,
       "slug": "omega.education-dao",
-      "address": "0x47797a0Be327Cfa47Cf5d1000b69c4356e868e5a"
+      "address": "0x47797a0Be327Cfa47Cf5d1000b69c4356e868e5a",
+      "chains": {
+        "monad": "0x47797a0Be327Cfa47Cf5d1000b69c4356e868e5a",
+        "asi": "11112fUCwLzo9ohyoZW2V5U3XjiFSFwsXjdX1nLLW5d3j95ncck9Nf",
+        "solana": "HtJrRkdFPse6j7nuJ1wJFNE1erCUZm3uLAKe1Ysvw9jU"
+      }
     },
     {
       "index": 74,
       "slug": "omega.public-health-dao",
-      "address": "0xEfC4b6c79D060479D47D15E56bEd538d6262a7eF"
+      "address": "0xEfC4b6c79D060479D47D15E56bEd538d6262a7eF",
+      "chains": {
+        "monad": "0xEfC4b6c79D060479D47D15E56bEd538d6262a7eF",
+        "asi": "1111dgTSKJCKHTjYxgirTrW3xwNdroihQN8XTMr4zYCuVm2rRbPFj",
+        "solana": "BYfQ6wgxRWnHoDnme1MV8QoEBcXYcsz7CEdesdNn88R4"
+      }
     },
     {
       "index": 75,
       "slug": "omega.agentic-payments",
-      "address": "0x76fB735216D6a9dA23923c3bcBa0cFfd48fE1A25"
+      "address": "0x76fB735216D6a9dA23923c3bcBa0cFfd48fE1A25",
+      "chains": {
+        "monad": "0x76fB735216D6a9dA23923c3bcBa0cFfd48fE1A25",
+        "asi": "1111zu2QvnTrSx5q7LddnKnMJkM9CXmTu3nSZu7z5kHzv8FRfBDPL",
+        "solana": "4UkLeUSXpCuwXi4sKse53iombNHUJXAVsx5M9VaRPpVn"
+      }
     },
     {
       "index": 76,
       "slug": "omega.agents-deploy-infrastructure",
-      "address": "0x509433fBe842F21e004f34F113235a270F2466f7"
+      "address": "0x509433fBe842F21e004f34F113235a270F2466f7",
+      "chains": {
+        "monad": "0x509433fBe842F21e004f34F113235a270F2466f7",
+        "asi": "1111oiTkZM3urR97NSjWxpdxc7EuXpifsBff1rRE3sDadQGU4FkxN",
+        "solana": "5fnuoDThpRMKmQxkViHWjivQi2R6fWJybkBKh8G3mXqT"
+      }
     },
     {
       "index": 77,
       "slug": "omega.autonomous-organizations",
-      "address": "0xCf7375079eFE0abD8d5111c252F02Ea52B16E8b8"
+      "address": "0xCf7375079eFE0abD8d5111c252F02Ea52B16E8b8",
+      "chains": {
+        "monad": "0xCf7375079eFE0abD8d5111c252F02Ea52B16E8b8",
+        "asi": "11112rfm9FvSo1Bfz8G7fgt3o1vbFvfzqDZzrsgzhWMim5yc5Qugy8",
+        "solana": "bkfKgynysEtvNwGiwWHmZfGM9BY8Y3vpP46syeut61A"
+      }
     }
   ]
 }

@@ -27,6 +27,11 @@
     "role": "sensor-qa",
     "metaprompt": "Sensor/QA: grade the run against its checks; flag any keep-out or load-limit breach.",
     "wallet": "0x56dF95617AE1F24144F26FE5a7Df68F73870157c",
+    "wallets": {
+      "monad": "0x56dF95617AE1F24144F26FE5a7Df68F73870157c",
+      "asi": "1111ir9wX6nQxR9vZhbZQmA84AEJp6MLN3Z2AgqgYff3Bx32Bo66o",
+      "solana": "GiqSXWp94kyuUsnxakqQzY76puyt1SNnxXou77sdwCbK"
+    },
     "caps": {
       "perPayment": "5 tOMEGA",
       "daily": "50 tOMEGA",

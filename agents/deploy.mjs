@@ -64,8 +64,10 @@ const idIface = new Interface(IDENTITY_ABI);
 for (const [i, a] of roster.entries()) {
   if (d.agents[a.slug]?.erc8004Id !== undefined) continue;
   const w = agentWallet(env, i).connect(provider);
-  if ((await provider.getBalance(w.address)) < GAS_PER_AGENT / 2n) {
-    await (await deployer.sendTransaction({ to: w.address, value: GAS_PER_AGENT })).wait();
+  // Monad charges the full gas LIMIT x maxFee, so top up to GAS_PER_AGENT, not merely "above half".
+  const have = await provider.getBalance(w.address);
+  if (have < GAS_PER_AGENT) {
+    await (await deployer.sendTransaction({ to: w.address, value: GAS_PER_AGENT - have })).wait();
   }
   const uri = `https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/${a.slug}.json`;
   const rc = await (await new Contract(ERC8004.identity, IDENTITY_ABI, w).register(uri)).wait();

@@ -14,7 +14,8 @@ remappings = [
 fs_permissions = [{ access = "read-write", path = "../deployments" }, { access = "read", path = "../agents" }]
 
 [rpc_endpoints]
-monad_testnet = "https://testnet-rpc.monad.xyz"
-monad = "https://rpc.monad.xyz"
+# Dwellir full nodes; DWELLIR_API_KEY comes from the environment (resolved only when an alias is used).
+monad_testnet = "https://api-monad-testnet-full.n.dwellir.com/${DWELLIR_API_KEY}"
+monad = "https://api-monad-mainnet-full.n.dwellir.com/${DWELLIR_API_KEY}"
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
