@@ -29,4 +29,6 @@ jobs:
           node-version: 24
       - run: npm ci
       - name: syntax check
-        run: for f in agents/*.mjs; do node --check "$f"; done
+        run: for f in agents/*.mjs agents/chains/*.mjs; do node --check "$f"; done
+      - name: multi-chain wallet tests (ASI:Chain + Solana, offline)
+        run: node agents/chains/test.mjs

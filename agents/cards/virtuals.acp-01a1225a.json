@@ -27,6 +27,11 @@
     "role": "coordinator",
     "metaprompt": "Coordinator: decompose the module into tasks, buy only what the cycle needs, never exceed the cap.",
     "wallet": "0xEB15d113a4B2bC0c2e9E19AfA68903e51469E7D6",
+    "wallets": {
+      "monad": "0xEB15d113a4B2bC0c2e9E19AfA68903e51469E7D6",
+      "asi": "1111F6Uka2EfJTjQYkzqTHtduhT9ew9vDrfiwp5wVhPTggeE2pmBP",
+      "solana": "8R9UomuF5ggoxQwdgP3eCNoz2bMKRkrj1n5kWyriCdjU"
+    },
     "caps": {
       "perPayment": "5 tOMEGA",
       "daily": "50 tOMEGA",

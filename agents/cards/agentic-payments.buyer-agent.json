@@ -12,7 +12,12 @@
       "network": "monad-testnet"
     }
   ],
-  "registrations": [],
+  "registrations": [
+    {
+      "agentId": 2347,
+      "agentRegistry": "eip155:10143:0x8004A818BFB912233c491871b3d84c89A494BD9e"
+    }
+  ],
   "supportedTrust": [
     "reputation"
   ],
@@ -23,6 +28,11 @@
     "role": "coordinator",
     "metaprompt": "Coordinator: decompose the module into tasks, buy only what the cycle needs, never exceed the cap.",
     "wallet": "0x158044aA20e0f68844499C1af585CEf582E94923",
+    "wallets": {
+      "monad": "0x158044aA20e0f68844499C1af585CEf582E94923",
+      "asi": "11112uWDSBRox895SrJYbZbame5QuNq4YL7aQq67wsuZ2Ab62NLQrk",
+      "solana": "8tPD9TgZSMtWRzLviccC7CS4ij2GwYwhgZ2doonXNtwb"
+    },
     "caps": {
       "perPayment": "5 tOMEGA",
       "daily": "50 tOMEGA",

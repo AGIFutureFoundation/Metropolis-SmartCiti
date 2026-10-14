@@ -1,5 +1,6 @@
 // Wallet setup for the Omega swarm: one deployer/facilitator, three P-256 steward keys, and one
-// HD-derived EVM wallet per agent. Secrets go to .env (git-ignored, chmod 600) and are never printed.
+// HD-derived wallet per agent on each chain (Monad EVM, ASI:Chain DevNet, Solana devnet; see agentKeys).
+// Secrets go to .env (git-ignored, chmod 600) and are never printed.
 // Public addresses go to agents/wallets.public.json, which is safe to commit.
 //
 //   node agents/wallets.mjs init     create .env if it does not exist (refuses to overwrite)
@@ -9,6 +10,8 @@ import { generateKeyPairSync } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync, chmodSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { asiKey, ASI_DEFAULTS } from './chains/asi.mjs';
+import { solanaAgentKey, SOLANA_DEFAULTS } from './chains/solana.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ENV = join(ROOT, '.env');
@@ -27,6 +30,32 @@ export function loadEnv() {
 export function agentWallet(env, index) {
   return HDNodeWallet.fromMnemonic(Mnemonic.fromPhrase(env.AGENT_MNEMONIC), `m/44'/60'/0'/0/${index}`);
 }
+
+/**
+ * Agent i on every chain the swarm uses. One backup secret (AGENT_MNEMONIC) covers all of them:
+ *   monad  EVM, m/44'/60'/0'/0/i
+ *   asi    ASI:Chain DevNet, the same secp256k1 key as monad (official ASI wallet mapping, "1111..." address)
+ *   solana ed25519 SLIP-0010, m/44'/501'/i'/0' (Phantom / Solflare convention)
+ */
+export function agentKeys(env, index) {
+  const evm = agentWallet(env, index);
+  return { monad: evm, asi: asiKey(evm.privateKey), solana: solanaAgentKey(env.AGENT_MNEMONIC, index) };
+}
+
+/** The deployer/facilitator on every chain (its Solana key is account index 1000 of the swarm mnemonic). */
+export function deployerKeys(env) {
+  return { asi: asiKey(env.DEPLOYER_PRIVATE_KEY), solana: solanaAgentKey(env.AGENT_MNEMONIC, DEPLOYER_SOLANA_INDEX) };
+}
+export const DEPLOYER_SOLANA_INDEX = 1000;
+
+/** Public networks block written into wallets.public.json (no secrets). */
+export const NETWORKS = {
+  monad: { kind: 'evm', network: 'monad-testnet', chainId: 10143, explorer: 'https://testnet.monadexplorer.com' },
+  asi: { kind: 'rchain', network: `asi-devnet (${ASI_DEFAULTS.networkId}, shard ${ASI_DEFAULTS.shardId})`, decimals: 8,
+    wallet: ASI_DEFAULTS.wallet, explorer: ASI_DEFAULTS.explorer, faucet: 'https://faucet.dev.asichain.io' },
+  solana: { kind: 'solana', network: 'solana-devnet', genesisHash: SOLANA_DEFAULTS.genesisHash, decimals: 9,
+    explorer: SOLANA_DEFAULTS.explorer, faucet: SOLANA_DEFAULTS.faucet },
+};
 
 function p256() {
   const { privateKey, publicKey } = generateKeyPairSync('ec', { namedCurve: 'P-256' });
@@ -67,15 +96,23 @@ function init() {
 function derive() {
   const env = loadEnv();
   const roster = JSON.parse(readFileSync(join(ROOT, 'agents/roster.json'), 'utf8'));
+  const dep = deployerKeys(env);
   const out = {
-    note: 'Public addresses only. Private keys stay in the local .env; agent keys are HD-derived (m/44\'/60\'/0\'/0/i).',
+    note: 'Public addresses only. Private keys stay in the local .env; agent keys are HD-derived from AGENT_MNEMONIC: '
+      + 'monad m/44\'/60\'/0\'/0/i, asi = same secp256k1 key as monad, solana m/44\'/501\'/i\'/0\'. '
+      + '`address` is the Monad address (kept for backward compatibility).',
     chainId: Number(env.CHAIN_ID),
+    networks: NETWORKS,
     deployer: env.DEPLOYER_ADDRESS,
+    deployerChains: { monad: env.DEPLOYER_ADDRESS, asi: dep.asi.address, solana: dep.solana.address },
     stewards: [1, 2, 3].map((k) => ({ id: k, p256: { x: env[`STEWARD${k}_P256_X`], y: env[`STEWARD${k}_P256_Y`] } })),
-    agents: roster.agents.map((a, i) => ({ index: i, slug: a.slug, address: agentWallet(env, i).address })),
+    agents: roster.agents.map((a, i) => {
+      const k = agentKeys(env, i);
+      return { index: i, slug: a.slug, address: k.monad.address, chains: { monad: k.monad.address, asi: k.asi.address, solana: k.solana.address } };
+    }),
   };
   writeFileSync(join(ROOT, 'agents/wallets.public.json'), JSON.stringify(out, null, 2) + '\n');
-  console.log(`Wrote agents/wallets.public.json: ${out.agents.length} agent wallets, 3 stewards.`);
+  console.log(`Wrote agents/wallets.public.json: ${out.agents.length} agents x 3 chains (monad, asi, solana), 3 stewards.`);
 }
 
 // CLI only when run directly (this module is also imported by the deploy and agent scripts).

@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "cd contracts && forge test",
-    "wallets": "node agents/wallets.mjs"
+    "test:chains": "node agents/chains/test.mjs",
+    "wallets": "node agents/wallets.mjs",
+    "multichain": "node agents/multichain.mjs"
   },
   "repository": {
     "type": "git",

@@ -12,7 +12,12 @@
       "network": "monad-testnet"
     }
   ],
-  "registrations": [],
+  "registrations": [
+    {
+      "agentId": 2342,
+      "agentRegistry": "eip155:10143:0x8004A818BFB912233c491871b3d84c89A494BD9e"
+    }
+  ],
   "supportedTrust": [
     "reputation"
   ],
@@ -23,6 +28,11 @@
     "role": "tutor",
     "metaprompt": "Tutor: return a flipped-lesson plan with objectives, safety gates and a graded check.",
     "wallet": "0x80d61968a61062EDe0CDC975089fF736e8703E5e",
+    "wallets": {
+      "monad": "0x80d61968a61062EDe0CDC975089fF736e8703E5e",
+      "asi": "1111c5EiEM74x62AKRVEsW2SqqCyLr41NVzt3sF7dEjwQ5wk7N4jg",
+      "solana": "F8dc6bKMwGmUg95nonofZCXREEyXEw3hD94EKJHJ5smH"
+    },
     "caps": {
       "perPayment": "5 tOMEGA",
       "daily": "50 tOMEGA",

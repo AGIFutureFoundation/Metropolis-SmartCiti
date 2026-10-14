@@ -1,0 +1,119 @@
+{
+  "chainId": 10143,
+  "explorer": "https://testnet.monadexplorer.com",
+  "erc8004": {
+    "identity": "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+    "reputation": "0x8004B663056A597Dffe9eCcC1965A193B7388713"
+  },
+  "agents": {
+    "robotics-dao.coordinator": {
+      "index": 0,
+      "wallet": "0xE8bA0C0572D98d5Ebd850736d8eA6554919FF23b",
+      "erc8004Id": 2339,
+      "role": 0,
+      "registerTx": "0x4dc3becd7f9ab4d1cb5cf4f4cd727f23f4e3add6826b4ed65f478f86b826591a",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/robotics-dao.coordinator.json"
+    },
+    "robotics-dao.evidence-monitor": {
+      "index": 1,
+      "wallet": "0x6a5F4Da7c75CD43e0e7059E13458218377b51b27",
+      "erc8004Id": 2340,
+      "role": 1,
+      "registerTx": "0xc03a8d275a46477d0a6fdfba71bdbd9c04318d82af3e7dcb34e6fff8406e45db",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/robotics-dao.evidence-monitor.json"
+    },
+    "robotics-dao.research-synthesis-agent": {
+      "index": 2,
+      "wallet": "0xAd66B14EcDA33ECdFdFE18C9d4FcCf0be9b60fD6",
+      "erc8004Id": 2341,
+      "role": 1,
+      "registerTx": "0x287fbbb525abe7c57c7ea7f5f8c229c15888a1a48c5ff444c071791dac1f074d",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/robotics-dao.research-synthesis-agent.json"
+    },
+    "robotics-dao.collaborator-scout": {
+      "index": 3,
+      "wallet": "0x80d61968a61062EDe0CDC975089fF736e8703E5e",
+      "erc8004Id": 2342,
+      "role": 1,
+      "registerTx": "0x75d0f966d65e9b46935edfe77a9539e4353278eaaad96ed628ea9ac5bddc1cd9",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/robotics-dao.collaborator-scout.json"
+    },
+    "robotics-dao.task-router": {
+      "index": 4,
+      "wallet": "0xF8D5d61e70e6da71061027D34595c7230746B7AB",
+      "erc8004Id": 2343,
+      "role": 1,
+      "registerTx": "0x61a02ff0c7e96e06552071b82f50dd50ca3be43a5767404edbed6e42df80597d",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/robotics-dao.task-router.json"
+    },
+    "robotics-dao.proposal-grant-drafter": {
+      "index": 5,
+      "wallet": "0x1592cC3985E9E90df3A41014178F86C78A16a695",
+      "erc8004Id": 2344,
+      "role": 1,
+      "registerTx": "0xba88aa9ae63d1983bd674511a4278a835764c05de88851a5e2b307dc4f36a211",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/robotics-dao.proposal-grant-drafter.json"
+    },
+    "robotics-dao.progress-tracker": {
+      "index": 6,
+      "wallet": "0x0cf5Fc2C4658C9C4A494761d2F1f6B5db05559a3",
+      "erc8004Id": 2345,
+      "role": 1,
+      "registerTx": "0x57f9ae8912bda18fda33d268028e249195e50b6a1c0da7eecb228310213260e8",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/robotics-dao.progress-tracker.json"
+    },
+    "agentic-payments.coordinator": {
+      "index": 7,
+      "wallet": "0xe8ddd2B0b7705D499d1cCff2aB598833e6F1Ba98",
+      "erc8004Id": 2346,
+      "role": 0,
+      "registerTx": "0x6fc1c388149509b36c5c47fd9062e567df8387f6af1f9d00459b984fddd3fa47",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/agentic-payments.coordinator.json"
+    },
+    "agentic-payments.buyer-agent": {
+      "index": 8,
+      "wallet": "0x158044aA20e0f68844499C1af585CEf582E94923",
+      "erc8004Id": 2347,
+      "role": 0,
+      "registerTx": "0x9f48fbf8794625cf154ceeca48becacab05dc67dcddfc884aa208fc3fb4fdc8e",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/agentic-payments.buyer-agent.json"
+    },
+    "agentic-payments.seller-agent": {
+      "index": 9,
+      "wallet": "0x750b8f2a24079fCb72E46F7767C0DB91a89E76bD",
+      "erc8004Id": 2348,
+      "role": 0,
+      "registerTx": "0xc1defe05c1bcd68f469fef9ec3f18e38b5399869a609fd3a12d3c8bf88067829",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/agentic-payments.seller-agent.json"
+    },
+    "agentic-payments.provisioning-agent": {
+      "index": 10,
+      "wallet": "0x89766F532e5CCa1449489b5e835719fDf87Cd03b",
+      "erc8004Id": 2349,
+      "role": 0,
+      "registerTx": "0x4481b2958998fb4fa0e00bdbef884b602575abcf751b957dad05df38cd480163",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/agentic-payments.provisioning-agent.json"
+    },
+    "agentic-payments.budget-agent": {
+      "index": 11,
+      "wallet": "0xB739BABC9be918608C212E38328a139895B4aDC7",
+      "erc8004Id": 2350,
+      "role": 0,
+      "registerTx": "0x96e829ea95c072ccea07e93bd2601263fb6f1fdadc48b43646b43308a7a7a513",
+      "uri": "https://raw.githubusercontent.com/AGIFutureFoundation/Metropolis-SmartCiti/main/agents/cards/agentic-payments.budget-agent.json"
+    }
+  },
+  "StewardCouncil": "0x7582DdE41532a903943f091bFFa4e6f87aCD55ff",
+  "StewardCouncil_tx": "0xeb16edccbaeb080fccea79816fd21f7429e596ae030ee74088fa7cae42e928a2",
+  "OmegaToken": "0xbc5F1B47ba3C95947a020a3F99D0cC0a5f8c790A",
+  "OmegaToken_tx": "0xf49e638c145ce29f94bb6672343d5f0720f729e1782c1f618249842c99a95684",
+  "OmegaAgentHub": "0x32d1a038bB8a1fDA75a90a791b7EBf6cDfD7Ebf2",
+  "OmegaAgentHub_tx": "0xe46df7560baeb025a5f028c27f5ab6203b876e53132a69433b715ec9f18c6ddb",
+  "TradeCraftCredential": "0x8c5565932a8c400c5F5aFa98e7936dC29d99EACA",
+  "TradeCraftCredential_tx": "0x2a61c6ec839f220c099c79efc2d89367cd737f410179eaf4b352d8bc4876eda1",
+  "caps": {
+    "perTx": "5 tOMEGA",
+    "daily": "50 tOMEGA",
+    "airdrop": "100 tOMEGA"
+  }
+}
