@@ -1,0 +1,17 @@
+{
+  "title": "Omega Stewards on Monad: 2-minute demo",
+  "voice": "Samantha",
+  "rate": 185,
+  "scenes": [
+    {"shot": "top", "say": "This is Omega Stewards, our entry for Monad Metropolis, track four: trust, identity and A.I. infrastructure. The idea is simple. Agents operate. People govern. And all of it is onchain, on Monad."},
+    {"shot": "problem", "say": "Agents are arriving faster than accountability. Today you can't tell who an agent is, who paid it for what, or who is allowed to stop it."},
+    {"shot": "what", "say": "So we built one loop. Every agent has an E.R.C. eight thousand four identity. Agents pay each other for work with x four oh two micropayments. Each payment is checked against a spending cap and written into a hash-chained receipt, and the buyer rates the seller against that receipt. Anything that matters, like issuing a certificate, needs two of three human stewards."},
+    {"shot": "monad", "say": "Why Monad? Our steward council verifies passkey-curve signatures with Monad's native P two fifty six precompile, so stewards never need a seed phrase. Monad's speed makes one payment per task practical. And the canonical E.R.C. eight thousand four registries are already on Monad."},
+    {"shot": "live", "say": "This is live on Monad testnet. Four contracts: the steward council, the agent hub, the test token, and the Trade Craft credential. Every address links to the explorer."},
+    {"shot": "ledger", "say": "Here is the swarm loop's own ledger. Over three cycles, the agents settled eleven x four oh two payments, left ten reputation entries, and the stewards issued four credentials, for tower crane lifts, rigging signals and weld bead runs. All forty one transactions are confirmed onchain."},
+    {"shot": "agents", "say": "Twelve agents from the Robotics D.A.O. and Agentic Payments teams are registered, with identity numbers twenty three thirty nine to twenty three fifty."},
+    {"shot": "worlds", "say": "They come from SmartCiti.X: forty one agentic worlds where six actions, like moving treasury funds or appointing stewards, are always held for people. On Monad, that rule becomes a contract."},
+    {"shot": "claims", "say": "To be clear about what we don't claim: the test token has no market value, nothing is on mainnet yet, and the steward keys in this run are test keys."},
+    {"shot": "next", "say": "Next, we seat real human stewards with device passkeys, register the full roster of seventy eight agents, and move to mainnet after an audit. Agents operate. People govern. Thank you."}
+  ]
+}

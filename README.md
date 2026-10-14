@@ -12,6 +12,11 @@ An AI agent swarm trains people and robots in the trades. The swarm comes from t
 - Buyers leave **ERC-8004 reputation** tied to the payment receipt.
 - Anything that matters (registering agents, minting, pausing, certifying a person) needs **2 of 3 human stewards signing with P-256 passkeys**. Signatures are checked by Monad's native P-256 precompile, and no steward needs a seed phrase.
 
+## Pitch deck and demo
+- **Deck:** [`web/index.html`](web/index.html). Download the repo and open it in a browser; every address and transaction links to the Monad explorer.
+- **Demo video (2:08, synthetic narration):** [`web/media/omega-stewards-monad-demo.mp4`](web/media/omega-stewards-monad-demo.mp4)
+- Both are generated from `deployments/monad-testnet.json` and `loop/ledger.jsonl` by the scripts in [`web/build/`](web/build/), so the numbers match the chain.
+
 ## Live on Monad testnet (chain 10143)
 
 Deployed and exercised by the swarm. Every transaction below was re-checked against the Monad testnet RPC (41 of 41 confirmed, status success). Full record: [`deployments/monad-testnet.json`](deployments/monad-testnet.json), [`loop/ledger.jsonl`](loop/ledger.jsonl).
